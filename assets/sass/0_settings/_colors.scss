@@ -1,0 +1,20 @@
+//abstracts
+$color--title: black;
+$color--copy: black;
+$color--primary: black;
+$color--secondary: black;
+
+//themes
+$palette--themes: (
+    'theme--1': (
+        'theme--primary': $color--primary,
+        'theme--primary-dark': darken($color--primary, 5%),
+        'theme--white': white
+    ),
+
+    'theme--2': (
+        'theme--primary': $color--secondary,
+        'theme--primary-dark': darken($color--secondary, 5%),
+        'theme--white': white
+    )
+)
