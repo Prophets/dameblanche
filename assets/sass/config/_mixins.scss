@@ -1,15 +1,23 @@
 /// font size
-@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5) {
-  font-size: ($sizeValue * 1) + px;
-  font-size: ($sizeValue / 10) + rem;
-  line-height: ($line * 1) + px;
-  line-height: ($line / 10) + rem;
-}
-
 @mixin stretch($padding: 0) {
     position: absolute;
     top: $padding;
     left: $padding;
     right: $padding;
     bottom: $padding;
+}
+
+@mixin list-unstyled() {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+@mixin list-inline() {
+    @include list-unstyled();
+
+    & > li {
+        display: inline-block;
+        padding: 0 5px 10px 0;
+    }
 }

@@ -1,29 +1,55 @@
-html {
-    font-size: 62.5%; /* Sets up the Base 10 stuff */
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
 }
 
-body {
-    @include font-size(18, 24);
-    font-family: $font--primary;
-    font-weight: 100;
-    color: $color--copy;
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+
+// Body text
+// -------------------------
+
+p {
+    margin: 0 0 ($line-height-computed / 2);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: $color--title;
+// Helpers
+// -------------------------
+
+@each $key, $value in $colors-brand {
+    .text--color-#{$key} { color: get-brand-color(#{$key}) !important; }
 }
 
-h2 {
-    @include font-size(48, 52);
-    font-family: $font--secondary;
-    font-weight: 400;
+@each $key, $value in map-get($colors-gray, 'primary') {
+    .text--color-gray-#{$key} { color: get-gray-color(#{$key}) !important; }
 }
 
-h3 {
-    font-weight: 100;
-}
+.text--left { text-align: left !important; }
+.text--right { text-align: right !important; }
+.text--center { text-align: center !important; }
+.text--justify { text-align: justify !important; }
+.text--nowrap { white-space: nowrap !important; }
 
-p, h1, h2, h3, h4, h5, h6 {
-  &:first-child { margin-top: 0; }
-  &:last-child { margin-bottom: 0; }
-}
+.text--lowercase { text-transform: lowercase !important; }
+.text--uppercase { text-transform: uppercase !important; }
+.text--capitalize { text-transform: capitalize !important; }
+
+strong, .text--strong { font-weight: $font-weight-bold; }
+em, .text--italic { font-style: italic; }
+
+// Lists
+// -------------------------
+
+.list-unstyled { @include list-unstyled; }
+.list-inline { @include list-inline; }
