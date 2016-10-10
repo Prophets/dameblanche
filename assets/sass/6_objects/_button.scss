@@ -40,17 +40,6 @@
         opacity: 0.65;
     }
 
-    &--theme-primary {
-
-        @include themify-button();
-
-        &-inverted {
-            @include themify-button($inverted: true);
-        }
-
-
-    }
-
     &--block {
         display: block;
         margin: auto;
