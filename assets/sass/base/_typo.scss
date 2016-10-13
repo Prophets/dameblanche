@@ -1,0 +1,31 @@
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+
+// Body text
+// -------------------------
+
+p {
+    margin: 0 0 ($line-height-computed / 2);
+}
+
+// Lists
+// -------------------------
+
+.list-unstyled { @include list-unstyled; }
+.list-inline { @include list-inline; }

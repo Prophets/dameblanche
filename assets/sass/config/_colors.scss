@@ -1,0 +1,33 @@
+$colors-brand: (
+    primary: (
+        base: #00b9d4,
+        dark: darken(#00b9d4, 10%)
+    )
+);
+
+$colors-gray: (
+    primary: (
+        light: #eee,
+        base: #999,
+        dark: #333
+    )
+);
+
+$colors-status: (
+    success: (
+        light: #dff0d8,
+        base: #3c763d
+    ),
+    info: (
+        light: #d9edf7,
+        base: #31708f
+    ),
+    warning: (
+        light: #fcf8e3,
+        base: #8a6d3b
+    ),
+    error: (
+        light: #f2dede,
+        base: #a94442
+    )
+);
