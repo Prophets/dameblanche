@@ -4,6 +4,7 @@ var compact = require('lodash/compact')
 // Grouped by what can run in parallel
 var assetTasks = ['images', 'svgSprite']
 var codeTasks = ['html', 'css', 'js']
+var lintTasks = ['eslint', 'stylelint']
 
 module.exports = function(env) {
 
@@ -22,6 +23,7 @@ module.exports = function(env) {
 
   return {
     assetTasks: compact(assetTasks.map(matchFilter).filter(exists)),
-    codeTasks: compact(codeTasks.map(matchFilter).filter(exists))
+    codeTasks: compact(codeTasks.map(matchFilter).filter(exists)),
+    lintTasks: compact(lintTasks.map(matchFilter).filter(exists))
   }
 }

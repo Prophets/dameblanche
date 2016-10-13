@@ -1,24 +1,22 @@
 var config      = require('../config')
-if(!config.tasks.css) return
+if(!config.tasks.stylelint) return
 
 var gulp        = require('gulp')
 var stylelint   = require('gulp-stylelint')
 var path        = require('path')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
+  src: path.join(config.root.src, config.tasks.stylelint.src, '/**/*.{' + config.tasks.stylelint.extensions + '}')
 }
 
 var stylelintTask = function() {
-  return gulp.src([paths.src, , '*!README.md'])
+  return gulp.src([paths.src])
     .pipe(stylelint({
-      failAfterError: global.production,
-      reporters: [
-        {
-          formatter: 'string',
-          console: true
-        }
-      ]
+      failAfterError: global.production ? true : false,
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
     }))
 }
 

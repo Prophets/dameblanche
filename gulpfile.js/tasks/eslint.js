@@ -1,5 +1,5 @@
 var config      = require('../config')
-if(!config.tasks.js) return
+if(!config.tasks.eslint) return
 
 var gulp        = require('gulp')
 var eslint      = require('gulp-eslint')
@@ -7,7 +7,7 @@ var gulpif      = require('gulp-if')
 var path        = require('path')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
+  src: path.join(config.root.src, config.tasks.eslint.src, '/**/*.{' + config.tasks.eslint.extensions + '}')
 }
 
 var eslintTask = function() {

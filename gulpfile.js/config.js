@@ -73,6 +73,16 @@ module.exports = {
 
     "production" : {
       "rev": true
+    },
+
+    "eslint": {
+      "src": "js",
+      "extensions": ["js", "json"]
+    },
+
+    "stylelint": {
+      "src": "sass",
+      "extensions": ["scss", "css"]
     }
   }
 }
