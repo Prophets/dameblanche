@@ -44,6 +44,7 @@
     "webpack-hot-middleware": "^2.13.0"
   },
   "dependencies": {
-    "normalize.css": "^5.0.0"
+    "normalize.css": "^5.0.0",
+    "svgxuse": "^1.1.22"
   }
 }
