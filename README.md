@@ -5,10 +5,8 @@ The code in this project is to be used as the base for "every" project.
 The purpose of this project is that we reach a singular workflow for our FE projects.
 
 ```bash
-git clone https://github.com/vigetlabs/gulp-starter.git MyApp
-cd MyApp
-rm -rf .git && git init
-git commit -m "initial commit"
+git clone https://github.com/vigetlabs/gulp-starter.git MyApp && cd MyApp
+rm -rf .git && git init && git commit -m "initial commit"
 npm install
 npm start
 ```
