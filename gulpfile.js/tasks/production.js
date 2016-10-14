@@ -3,7 +3,7 @@ const
     gulp = require('gulp'),
     gulpSequence = require('gulp-sequence'),
     getEnabledTasks = require('../lib/getEnabledTasks'),
-    productionTask = function(cb) {
+    productionTask = (cb) => {
         global.production = true;
 
         const tasks = getEnabledTasks('production');
