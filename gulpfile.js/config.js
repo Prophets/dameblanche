@@ -48,7 +48,7 @@ module.exports = {
             'extensions': ['scss', 'css']
         },
 
-        'html': {
+        'templates': {
             'src': 'templates',
             'dest': './',
             'dataFile': 'data/global.json',

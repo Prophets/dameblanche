@@ -1,5 +1,5 @@
 const config = require('../config');
-if (!config.tasks.html) return;
+if (!config.tasks.templates) return;
 
 const
     browserSync = require('browser-sync'),
@@ -12,24 +12,24 @@ const
     render = require('gulp-nunjucks-render'),
     fs = require('fs'),
 
-    exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**'),
+    exclude = path.normalize('!**/{' + config.tasks.templates.excludeFolders.join(',') + '}/**'),
 
     paths = {
-        src: [path.join(config.root.src, config.tasks.html.src, '/**/*.{' + config.tasks.html.extensions + '}'), exclude],
-        dest: path.join(config.root.dest, config.tasks.html.dest)
+        src: [path.join(config.root.src, config.tasks.templates.src, '/**/*.{' + config.tasks.templates.extensions + '}'), exclude],
+        dest: path.join(config.root.dest, config.tasks.templates.dest)
     },
 
     getData = () => {
-        const dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile);
+        const dataPath = path.resolve(config.root.src, config.tasks.templates.src, config.tasks.templates.dataFile);
         return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     },
 
-    htmlTask = function() {
+    templatesTask = function() {
         return gulp.src(paths.src)
             .pipe(data(getData))
             .on('error', handleErrors)
             .pipe(render({
-                path: [path.join(config.root.src, config.tasks.html.src)],
+                path: [path.join(config.root.src, config.tasks.templates.src)],
                 envOptions: {
                     watch: false
                 },
@@ -38,10 +38,10 @@ const
                 }
             }))
             .on('error', handleErrors)
-            .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
+            .pipe(gulpif(global.production, htmlmin(config.tasks.templates.htmlmin)))
             .pipe(gulp.dest(paths.dest))
             .on('end', browserSync.reload);
     };
 
-gulp.task('html', htmlTask);
-module.exports = htmlTask;
+gulp.task('templates', templatesTask);
+module.exports = templatesTask;
