@@ -1,29 +1,34 @@
-var config  = require('../config')
-var compact = require('lodash/compact')
+const
+    config = require('../config'),
+    compact = require('lodash/compact'),
 
-// Grouped by what can run in parallel
-var assetTasks = ['images', 'svgSprite']
-var codeTasks = ['templates', 'css', 'js']
-var lintTasks = ['eslint', 'stylelint']
+    // Grouped by what can run in parallel
+    assetTasks = ['images', 'svgSprite'],
+    codeTasks = ['templates', 'css', 'js'],
+    lintTasks = ['eslint', 'stylelint'];
 
-module.exports = function(env) {
+module.exports = (env) => {
+    const
+        matchFilter = (task) => {
+            let t = task;
 
-  function matchFilter(task) {
-    if(config.tasks[task]) {
-      if(task === 'js') {
-        task = env === 'production' ? 'webpack:production' : false
-      }
-      return task
-    }
-  }
+            if (config.tasks[t]) {
+                if (t === 'js') {
+                    t = env === 'production' ? 'webpack:production' : false;
+                }
 
-  function exists(value) {
-    return !!value
-  }
+                return t;
+            }
 
-  return {
-    assetTasks: compact(assetTasks.map(matchFilter).filter(exists)),
-    codeTasks: compact(codeTasks.map(matchFilter).filter(exists)),
-    lintTasks: compact(lintTasks.map(matchFilter).filter(exists))
-  }
-}
+            return undefined;
+        },
+        exists = (value) => {
+            return !!value;
+        };
+
+    return {
+        assetTasks: compact(assetTasks.map(matchFilter).filter(exists)),
+        codeTasks: compact(codeTasks.map(matchFilter).filter(exists)),
+        lintTasks: compact(lintTasks.map(matchFilter).filter(exists))
+    };
+};
