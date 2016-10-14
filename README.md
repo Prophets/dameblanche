@@ -73,3 +73,30 @@ A `README.md` with details about each asset type are available in their respecti
 - [Static Files (favicons, app icons, etc.)](src/static)
 
 This will compile revisioned and compressed files to `./build`. 
+
+## Helpful tools
+
+### Sublime packages
+
+#### Editor Config
+> [EditorConfig](http://editorconfig.org) helps developers maintain consistent coding styles between different editors
+
+[Install the sublime package](https://github.com/sindresorhus/editorconfig-sublime#install) so Sublime Text uses the settings in .editorconfig
+
+#### Sublime Linter
+
+To have ESLint and Stylelint warning- and error output in Sublime Text, use the awesome [Sublime Linter](http://sublimelinter.readthedocs.io/en/latest/index.html)
+- [Install the SublimeLinter framework](http://sublimelinter.readthedocs.io/en/latest/installation.html#installing-via-pc)
+- [Install the SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint#plugin-installation)
+- [Install the SublimeLinter-stylelint](https://github.com/kungfusheep/SublimeLinter-contrib-stylelint#plugin-installation)
+
+#### Nunjucks syntax definitions
+
+[Nunjucks syntax for Sublime Text](https://packagecontrol.io/packages/Nunjucks%20Syntax) will make sure you have the right syntax highlighting
+
+**There's a small issue though**: [the package doesn't place the `.tmlanguage` in the correct folder](https://github.com/mogga/sublime-nunjucks/issues/6)
+The fix is simple enough though: 
+- ```cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages```
+- ```mkdir "Nunjucks Syntax" && cd Nunjucks\ Syntax/```
+- paste [this file](https://raw.githubusercontent.com/mogga/sublime-nunjucks/master/Nunjucks.tmLanguage) there
+- open a .njk file (for example: src/templates/index.njk), and choose "open all with current extension as" > "Nunjucks" from the syntax menu in the bottom right corner of Sublime Text

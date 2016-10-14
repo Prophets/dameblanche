@@ -16,13 +16,6 @@ Robust templating with [Nunjucks](https://mozilla.github.io/nunjucks/). Nunjucks
 
 A global data file is set up at [src/html/data/global.json](src/html/data/global.json), is read in by the `html` task, and exposes the properties to your html templates. For example {{title}} is used in the `layouts/default.html` layout.
 
-## Helpful stuff
+## Nunjucks syntax
 
-[Nunjucks syntax for Sublime Text](https://packagecontrol.io/packages/Nunjucks%20Syntax)
-
-**There's a small issue though**: [the package doesn't place the `.tmlanguage` in the correct folder](https://github.com/mogga/sublime-nunjucks/issues/6)
-The fix is simple enough though: 
-- ```cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages```
-- mkdir "Nunjucks Syntax" && cd Nunjucks\ Syntax/
-- paste [this file](https://raw.githubusercontent.com/mogga/sublime-nunjucks/master/Nunjucks.tmLanguage) there
-- open a .njk file (for example: src/templates/index.njk), and choose "open all with current extension as" > "Nunjucks" from the syntax menu in the bottom right corner of Sublime Text
+Check the [helpful tools section](https://git.prophets.be/playground/lets-disagree-to-agree/tree/feature/documentation#nunjucks-syntax-definitions) in the main README on how to install Nunjucks syntax in sublime
