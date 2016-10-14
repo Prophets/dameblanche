@@ -55,7 +55,7 @@ module.exports = {
       "htmlmin": {
         "collapseWhitespace": true
       },
-      "extensions": ["html", "json"],
+      "extensions": ["njk", "json"],
       "excludeFolders": ["layouts", "shared", "macros", "data"]
     },
 
