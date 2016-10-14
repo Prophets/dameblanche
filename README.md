@@ -26,12 +26,12 @@ Make sure Node is installed. We recommend using [NVM](https://github.com/creatio
 
 This has been tested on Node `6.7.0`, and should work on newer versions as well. [File an issue](https://git.prophets.be/playground/lets-disagree-to-agree/issues) if it doesn't!
 
-#### Install Dependencies
+### Install Dependencies
 ```bash
 npm install
 ```
 
-#### Run development tasks:
+### Run development tasks:
 ```bash
 npm run start
 ```
@@ -45,7 +45,7 @@ To run any other existing task, simply add the task name after the `npm run star
 
 `npm run start eslint`
 
-#### Build production files:
+### Build production files:
 ```bash
 npm run build
 ```
