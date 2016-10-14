@@ -1,4 +1,4 @@
-# ![Gulp Starter](extras/demo/src/images/gulp-starter-logo.png)
+# Let's disagree to agree
 
 The code in this project is to be used as the base for "every" project.
 
