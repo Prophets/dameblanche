@@ -11,7 +11,7 @@ const
         src: path.join(config.root.src, config.tasks.eslint.src, '/**/*.{' + config.tasks.eslint.extensions + '}')
     },
 
-    eslintTask = function() {
+    eslintTask = () => {
         return gulp.src([paths.src])
             .pipe(eslint())
             // eslint.format() outputs the lint results to the console.

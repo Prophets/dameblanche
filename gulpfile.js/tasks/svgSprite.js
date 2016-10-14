@@ -7,7 +7,7 @@ const
     imagemin = require('gulp-imagemin'),
     svgstore = require('gulp-svgstore'),
     path = require('path'),
-    svgSpriteTask = function() {
+    svgSpriteTask = () => {
         const settings = {
             src: path.join(config.root.src, config.tasks.svgSprite.src, '/*.svg'),
             dest: path.join(config.root.dest, config.tasks.svgSprite.dest)

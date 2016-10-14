@@ -24,7 +24,7 @@ const
         return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     },
 
-    templatesTask = function() {
+    templatesTask = () => {
         return gulp.src(paths.src)
             .pipe(data(getData))
             .on('error', handleErrors)
