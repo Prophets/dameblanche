@@ -1,24 +1,23 @@
-var config      = require('../config')
-if(!config.tasks.stylelint) return
+const config = require('../config');
+if (!config.tasks.stylelint) return;
 
-var gulp        = require('gulp')
-var stylelint   = require('gulp-stylelint')
-var path        = require('path')
+const
+    gulp = require('gulp'),
+    stylelint = require('gulp-stylelint'),
+    path = require('path'),
+    paths = {
+        src: path.join(config.root.src, config.tasks.stylelint.src, '/**/*.{' + config.tasks.stylelint.extensions + '}')
+    },
+    stylelintTask = () => {
+        return gulp.src([paths.src])
+            .pipe(stylelint({
+                failAfterError: global.production ? true : false,
+                reporters: [{
+                    formatter: 'string',
+                    console: true
+                }]
+            }));
+    };
 
-var paths = {
-  src: path.join(config.root.src, config.tasks.stylelint.src, '/**/*.{' + config.tasks.stylelint.extensions + '}')
-}
-
-var stylelintTask = function() {
-  return gulp.src([paths.src])
-    .pipe(stylelint({
-      failAfterError: global.production ? true : false,
-      reporters: [{
-        formatter: 'string',
-        console: true
-      }]
-    }))
-}
-
-gulp.task('stylelint', stylelintTask)
-module.exports = stylelintTask
+gulp.task('stylelint', stylelintTask);
+module.exports = stylelintTask;

@@ -1,24 +1,24 @@
-var path = require('path')
-var fs   = require('fs')
+const
+    path = require('path'),
+    fs = require('fs');
 
-module.exports = function(publicPath, dest, filename) {
-  filename = filename || 'rev-manifest.json'
+module.exports = function(publicPath, dest, filename = 'rev-manifest.json') {
+    return () => {
+        this.plugin('done', (statistics) => {
+            const
+                stats = statistics.toJson(),
+                chunks = stats.assetsByChunkName,
+                manifest = {};
 
-  return function() {
-    this.plugin("done", function(stats) {
-      var stats    = stats.toJson()
-      var chunks   = stats.assetsByChunkName
-      var manifest = {}
+            for (let key in chunks) {
+                const originalFilename = key + '.js';
+                manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key]);
+            }
 
-      for (var key in chunks) {
-        var originalFilename = key + '.js'
-        manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key])
-      }
-
-      fs.writeFileSync(
-        path.join(process.cwd(), dest, filename),
-        JSON.stringify(manifest)
-      )
-    })
-  }
-}
+            fs.writeFileSync(
+                path.join(process.cwd(), dest, filename),
+                JSON.stringify(manifest)
+            );
+        });
+    };
+};

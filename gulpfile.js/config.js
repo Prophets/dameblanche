@@ -1,88 +1,88 @@
 const
-  getArg = require('./lib/getArg'),
-  destFolder = getArg('--build') ? "./build" : "./public"
+    getArg = require('./lib/getArg'),
+    destFolder = getArg('--build') ? './build' : './public';
 
 module.exports = {
-  "root": {
-    "src": "./assets",
-    "dest": destFolder
-  },
-
-  "tasks": {
-    "browserSync": {
-      "server": {
-        "baseDir": "public"
-      }
+    'root': {
+        'src': './assets',
+        'dest': destFolder
     },
 
-    "static": {
-      "src": "static",
-      "dest": "./"
-    },
+    'tasks': {
+        'browserSync': {
+            'server': {
+                'baseDir': 'public'
+            }
+        },
 
-    "js": {
-      "src": "js",
-      "dest": "js",
-      "entries": {
-        "app": ["./app.js"]
-      },
-      "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015"],
-        "plugins": []
-      },
-      "extractSharedJs": false
-    },
+        'static': {
+            'src': 'static',
+            'dest': './'
+        },
 
-    "css": {
-      "src": "sass",
-      "dest": "css",
-      "autoprefixer": {
-        "browsers": ["last 3 version"]
-      },
-      "sass": {
-        "includePaths": [
-          "./node_modules"
-        ]
-      },
-      "extensions": ["scss", "css"]
-    },
+        'js': {
+            'src': 'js',
+            'dest': 'js',
+            'entries': {
+                'app': ['./app.js']
+            },
+            'extensions': ['js', 'json'],
+            'babel': {
+                'presets': ['es2015'],
+                'plugins': []
+            },
+            'extractSharedJs': false
+        },
 
-    "html": {
-      "src": "templates",
-      "dest": "./",
-      "dataFile": "data/global.json",
-      "htmlmin": {
-        "collapseWhitespace": true
-      },
-      "extensions": ["njk", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
-    },
+        'css': {
+            'src': 'sass',
+            'dest': 'css',
+            'autoprefixer': {
+                'browsers': ['last 3 version']
+            },
+            'sass': {
+                'includePaths': [
+                    './node_modules'
+                ]
+            },
+            'extensions': ['scss', 'css']
+        },
 
-    "images": {
-      "src": "images",
-      "dest": "images",
-      "extensions": ["jpg", "png", "svg", "gif"]
-    },
+        'templates': {
+            'src': 'templates',
+            'dest': './',
+            'dataFile': 'data/global.json',
+            'htmlmin': {
+                'collapseWhitespace': true
+            },
+            'extensions': ['njk', 'json'],
+            'excludeFolders': ['layouts', 'shared', 'macros', 'data']
+        },
 
-    "svgSprite": {
-      "src": "symbols",
-      "dest": "images",
-      "extensions": ["svg"]
-    },
+        'images': {
+            'src': 'images',
+            'dest': 'images',
+            'extensions': ['jpg', 'png', 'svg', 'gif']
+        },
 
-    "production" : {
-      "rev": true
-    },
+        'svgSprite': {
+            'src': 'symbols',
+            'dest': 'images',
+            'extensions': ['svg']
+        },
 
-    "eslint": {
-      "src": "js",
-      "extensions": ["js", "json"]
-    },
+        'production': {
+            'rev': true
+        },
 
-    "stylelint": {
-      "src": "sass",
-      "extensions": ["scss", "css"]
+        'eslint': {
+            'src': 'js',
+            'extensions': ['js', 'json']
+        },
+
+        'stylelint': {
+            'src': 'sass',
+            'extensions': ['scss', 'css']
+        }
     }
-  }
-}
+};

@@ -1,12 +1,12 @@
-var gulp   = require('gulp')
-var del    = require('del')
-var config = require('../config')
+const
+    gulp = require('gulp'),
+    del = require('del'),
+    config = require('../config'),
+    cleanTask = (cb) => {
+        del([config.root.dest]).then(() => {
+            cb();
+        });
+    };
 
-var cleanTask = function (cb) {
-  del([config.root.dest]).then(function (paths) {
-    cb()
-  })
-}
-
-gulp.task('clean', cleanTask)
-module.exports = cleanTask
+gulp.task('clean', cleanTask);
+module.exports = cleanTask;
