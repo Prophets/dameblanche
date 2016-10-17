@@ -27,7 +27,7 @@ Our Sass is organized in a number of folders and files. A breakdown of what's wh
 
 - `/components` : This folder contains all component related Sass. A component is (mostly) a slightly larger building block in your application, containing objects and maybe even other components. But it's a concrete, implementation specific piece of UI.
 
-- `/trumps` : This filder contains a number of files that have utility classes in them. Most of these utility classes have `!important` in them. Use these classes sparingly!
+- `/trumps` : This folder contains a number of files that have utility classes in them. Most of these utility classes have `!important` in them. Use these classes sparingly!
 
 
 ## Naming conventions
