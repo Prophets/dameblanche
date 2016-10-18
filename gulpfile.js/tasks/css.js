@@ -8,6 +8,7 @@ const
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     handleErrors = require('../lib/handleErrors'),
+    customNotifier = require('../lib/customNotifier'),
     autoprefixer = require('gulp-autoprefixer'),
     path = require('path'),
     cssnano = require('gulp-cssnano'),
@@ -26,6 +27,7 @@ const
             })))
             .pipe(gulpif(!global.production, sourcemaps.write()))
             .pipe(gulp.dest(paths.dest))
+            .pipe(customNotifier({ title: 'CSS compiled' }))
             .pipe(browserSync.stream());
     };
 

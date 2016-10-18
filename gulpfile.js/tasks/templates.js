@@ -7,6 +7,7 @@ const
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     handleErrors = require('../lib/handleErrors'),
+    customNotifier = require('../lib/customNotifier'),
     htmlmin = require('gulp-htmlmin'),
     path = require('path'),
     render = require('gulp-nunjucks-render'),
@@ -40,6 +41,7 @@ const
             .on('error', handleErrors)
             .pipe(gulpif(global.production, htmlmin(config.tasks.templates.htmlmin)))
             .pipe(gulp.dest(paths.dest))
+            .pipe(customNotifier({ title: 'Template compiled' }))
             .on('end', browserSync.reload);
     };
 

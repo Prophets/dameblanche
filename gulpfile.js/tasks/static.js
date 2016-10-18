@@ -1,6 +1,7 @@
 const
     config = require('../config'),
     changed = require('gulp-changed'),
+    customNotifier = require('../lib/customNotifier'),
     gulp = require('gulp'),
     path = require('path'),
     paths = {
@@ -13,7 +14,8 @@ const
     staticTask = () => {
         return gulp.src(paths.src)
             .pipe(changed(paths.dest)) // Ignore unchanged files
-            .pipe(gulp.dest(paths.dest));
+            .pipe(gulp.dest(paths.dest))
+            .pipe(customNotifier({ title: 'CSS compiled' }));
     };
 
 gulp.task('static', staticTask);

@@ -6,6 +6,7 @@ const
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     svgstore = require('gulp-svgstore'),
+    customNotifier = require('../lib/customNotifier'),
     path = require('path'),
     svgSpriteTask = () => {
         const settings = {
@@ -17,6 +18,7 @@ const
             .pipe(imagemin())
             .pipe(svgstore())
             .pipe(gulp.dest(settings.dest))
+            .pipe(customNotifier({ title: 'SVG sprite compiled' }))
             .pipe(browserSync.stream());
     };
 

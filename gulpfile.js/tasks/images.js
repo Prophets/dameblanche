@@ -6,6 +6,7 @@ const
     changed = require('gulp-changed'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
+    customNotifier = require('../lib/customNotifier'),
     path = require('path'),
     paths = {
         src: path.join(config.root.src, config.tasks.images.src, '/**/*.{' + config.tasks.images.extensions + '}'),
@@ -16,6 +17,7 @@ const
             .pipe(changed(paths.dest)) // Ignore unchanged files
             .pipe(imagemin()) // Optimize
             .pipe(gulp.dest(paths.dest))
+            .pipe(customNotifier({ title: 'Images minified' }))
             .pipe(browserSync.stream());
     };
 
