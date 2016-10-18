@@ -41,8 +41,8 @@ const
             .on('error', handleErrors)
             .pipe(gulpif(global.production, htmlmin(config.tasks.templates.htmlmin)))
             .pipe(gulp.dest(paths.dest))
-            .pipe(customNotifier({ title: 'Template compiled' }))
-            .on('end', browserSync.reload);
+            .on('end', browserSync.reload)
+            .pipe(customNotifier({ title: 'Template compiled' }));
     };
 
 gulp.task('templates', templatesTask);
