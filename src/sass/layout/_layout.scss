@@ -1,0 +1,11 @@
+///in here the layout selectors can be styled.
+///I usually put my component in a layout container, so it's positioning is independent from its internal styling.
+///a layout container has pure positioning/visibility function. no other styling.
+///
+/// <section class="l-component-name">
+///     <article class="c-component-name c-component-name--modifier">
+///         <p class="c-component-name__child">
+///             bla bla
+///         </p>
+///     </article>
+/// </section>

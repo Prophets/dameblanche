@@ -1,0 +1,7 @@
+/// In here object selectors can be styled.
+/// For me, an object is an element that is used context-independent.(ex.: an icon, a button, ...)
+/// The the difference with a component, is that an component is context-dependent (ex.: a product, a carousel, a navigation-bar, a footer, a payment,...)
+/// As a guide, i state the following rule: 'a component can have objects and components as children,
+/// whereas an object can have no objects or components as children'
+
+@import 'icon';
