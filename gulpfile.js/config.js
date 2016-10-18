@@ -4,7 +4,7 @@ const
 
 module.exports = {
     'root': {
-        'src': './assets',
+        'src': './src',
         'dest': destFolder
     },
 
