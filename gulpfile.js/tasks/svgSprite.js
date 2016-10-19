@@ -18,8 +18,8 @@ const
             .pipe(imagemin())
             .pipe(svgstore())
             .pipe(gulp.dest(settings.dest))
-            .pipe(customNotifier({ title: 'SVG sprite compiled' }))
-            .pipe(browserSync.stream());
+            .on('end', browserSync.reload)
+            .pipe(customNotifier({ title: 'SVG sprite compiled' }));
     };
 
 
