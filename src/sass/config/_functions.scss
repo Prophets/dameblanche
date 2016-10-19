@@ -4,6 +4,9 @@
 
         @if (map-has-key($color, $shade)) {
             @return map-get($color, $shade);
+        } @else {
+            @warn 'Unknown `#{$shade}` in color palette `#{$key}`.';
+            @return null;
         }
     }
 
