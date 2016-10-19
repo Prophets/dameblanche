@@ -1,15 +1,16 @@
 {
   "rules": {
     "at-rule-empty-line-before": [ "always", {
-      except: [ "blockless-group", "first-nested" ],
-      ignore: ["after-comment"],
+      "except": [ "blockless-group", "first-nested" ],
+      "ignore": ["after-comment", "blockless-after-same-name-blockless"],
+      "ignoreAtRules": ["return", "warn", "else", "if"]
     } ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "at-rule-semicolon-newline-after": "always",
-    "block-closing-brace-newline-after": ["always",
-        ignoreAtRules: ["if", "else"]
-    ],
+    "block-closing-brace-newline-after": ["always", {
+        "ignoreAtRules": ["if", "else"]
+    } ],
     "block-closing-brace-newline-before": "always-multi-line",
     "block-closing-brace-space-before": "always-single-line",
     "block-no-empty": true,
@@ -20,8 +21,8 @@
     "color-hex-length": "short",
     "color-no-invalid-hex": true,
     "comment-empty-line-before": [ "always", {
-      except: ["first-nested"],
-      ignore: ["stylelint-commands"],
+      "except": ["first-nested"],
+      "ignore": ["stylelint-commands"]
     } ],
     "comment-whitespace-inside": "always",
     "declaration-bang-space-after": "never",
@@ -67,11 +68,11 @@
     "length-zero-no-unit": true,
     "property-case": "lower",
     "rule-non-nested-empty-line-before": [ "always-multi-line", {
-      ignore: ["after-comment"],
+      "ignore": ["after-comment"]
     } ],
     "rule-nested-empty-line-before": [ "always-multi-line", {
-      ignore: ["after-comment"],
-      except: ["first-nested"]
+      "ignore": ["after-comment"],
+      "except": ["first-nested"]
     } ],
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
@@ -95,6 +96,6 @@
     "unit-no-unknown": true,
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
-    "value-list-comma-space-before": "never",
+    "value-list-comma-space-before": "never"
   }
 }
