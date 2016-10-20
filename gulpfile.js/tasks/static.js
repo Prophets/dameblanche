@@ -15,7 +15,7 @@ const
         return gulp.src(paths.src)
             .pipe(changed(paths.dest)) // Ignore unchanged files
             .pipe(gulp.dest(paths.dest))
-            .pipe(customNotifier({ title: 'CSS compiled' }));
+            .pipe(customNotifier({ title: 'Static files copied' }));
     };
 
 gulp.task('static', staticTask);
