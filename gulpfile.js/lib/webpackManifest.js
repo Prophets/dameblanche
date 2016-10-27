@@ -3,7 +3,7 @@ const
     fs = require('fs');
 
 module.exports = function(publicPath, dest, filename = 'rev-manifest.json') {
-    return () => {
+    return function() {
         this.plugin('done', (statistics) => {
             const
                 stats = statistics.toJson(),
