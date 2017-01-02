@@ -5,10 +5,10 @@ The code in this project is to be used as the base for "every" project.
 The purpose of this project is that we reach a singular workflow for our FE projects.
 
 ```bash
-git clone https://github.com/vigetlabs/gulp-starter.git MyApp && cd MyApp
-rm -rf .git && git init && git commit -m "initial commit"
-npm install
-npm start
+git clone https://git.prophets.be/playground/lets-disagree-to-agree.git MyApp && cd MyApp
+yarn
+rm -rf .git && git init && git add -A && git commit -m "initial commit"
+yarn start
 ```
 
 Features | Tools Used
@@ -28,26 +28,26 @@ This has been tested on Node `6.7.0`, and should work on newer versions as well.
 
 ### Install Dependencies
 ```bash
-npm install
+yarn
 ```
 
 ### Run development tasks:
 ```bash
-npm run start
+yarn run start
 ```
-Alias: `npm start`
+Alias: `yarn start`
 
 This is where the magic happens. The perfect front-end workflow. This runs the default gulp task, which starts compiling, watching, and live updating all our files as we change them. BrowserSync will start a server on port 3000, or do whatever you've configured it to do. You'll be able to see live changes in all connected browsers. Don't forget about the additional BrowserSync tools available on port 3001!
 
 Why run this as an npm script? NPM scripts add ./node_modules/bin to the path when run, using the packages version installed with this project, rather than a globally installed ones. Never `npm install -g` and get into mis-matched version issues again. These scripts are defined in the `scripts` property of `package.json`.
 
-To run any other existing task, simply add the task name after the `npm run start` command. Example:
+To run any other existing task, simply add the task name after the `yarn run start` command. Example:
 
-`npm run start eslint`
+`yarn run start eslint`
 
 ### Build production files:
 ```bash
-npm run build
+yarn run build
 ```
 
 This will compile revisioned and compressed files to `./build`. 
