@@ -37,9 +37,6 @@ module.exports = {
         'css': {
             'src': 'sass',
             'dest': 'css',
-            'autoprefixer': {
-                'browsers': ['last 3 version']
-            },
             'sass': {
                 'includePaths': [
                     './node_modules'
