@@ -1,6 +1,6 @@
 {
     "parser": "babel-eslint",
-    "plugins": ["compat"],
+    "plugins": ["compat", "json"],
     "env": {
         "browser": true,
         "node": true
