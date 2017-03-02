@@ -12,20 +12,20 @@ module.exports = (env) => {
         jsSrc = path.resolve(config.root.src, config.tasks.js.src),
         jsDest = path.resolve(config.root.dest, config.tasks.js.dest),
         publicPath = pathToUrl(config.tasks.js.dest, '/'),
-        extensions = config.tasks.js.extensions.map((extension) => {
-            return '.' + extension;
-        }),
         rev = config.tasks.production.rev && env === 'production',
         filenamePattern = rev ? '[name]-[hash].js' : '[name].js',
         webpackConfig = {
             context: jsSrc,
             plugins: [],
             resolve: {
-                root: jsSrc,
-                extensions: [''].concat(extensions)
+                modules: [
+                    jsSrc,
+                    'node_modules'
+                ],
+                extensions: config.tasks.js.extensions.map((extension) => '.' + extension)
             },
             module: {
-                loaders: [{
+                rules: [{
                     test: /\.js$/,
                     loader: 'babel-loader',
                     exclude: /node_modules/,
@@ -77,9 +77,12 @@ module.exports = (env) => {
                     'NODE_ENV': JSON.stringify('production')
                 }
             }),
-            new webpack.optimize.DedupePlugin(),
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+                debug: false
+            }),
             new webpack.optimize.UglifyJsPlugin(),
-            new webpack.NoErrorsPlugin()
+            new webpack.NoEmitOnErrorsPlugin()
         );
     }
 

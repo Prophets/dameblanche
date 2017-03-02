@@ -28,7 +28,7 @@ module.exports = {
             },
             'extensions': ['js', 'json'],
             'babel': {
-                'presets': ['es2015'],
+                'presets': [['es2015', { 'modules': false }]],
                 'plugins': []
             },
             'extractSharedJs': false
