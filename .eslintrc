@@ -1,5 +1,6 @@
 {
     "parser": "babel-eslint",
+    "plugins": ["compat", "json"],
     "env": {
         "browser": true,
         "node": true
@@ -52,7 +53,9 @@
         "no-constant-condition": 1,
         "no-dupe-keys": 2,
         "no-duplicate-case": 2,
-        "no-empty": 2,
+        "no-empty": [2, {
+            "allowEmptyCatch": true
+        }],
         "no-ex-assign": 2,
         "no-extra-boolean-cast": 0,
         "no-extra-semi": 2,
@@ -145,7 +148,7 @@
         "no-trailing-spaces": 2,
         "no-extra-parens": [2, "functions"],
         "no-underscore-dangle": 0,
-        "one-var": [2, "always"],
+        "one-var": [2, "never"],
         "padded-blocks": [2, "never"],
         "semi": [2, "always"],
         "semi-spacing": [2, {
@@ -155,6 +158,8 @@
         "keyword-spacing": 2,
         "space-before-blocks": 2,
         "space-before-function-paren": [2, "never"],
-        "space-infix-ops": 2
+        "space-infix-ops": 2,
+
+        "compat/compat": 1
     }
 }

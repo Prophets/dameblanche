@@ -6,8 +6,8 @@ The purpose of this project is that we reach a singular workflow for our FE proj
 
 ```bash
 git clone https://git.prophets.be/playground/lets-disagree-to-agree.git MyApp && cd MyApp
-yarn
 rm -rf .git && git init && git add -A && git commit -m "initial commit"
+yarn
 yarn start
 ```
 

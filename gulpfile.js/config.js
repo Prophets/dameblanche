@@ -17,7 +17,8 @@ module.exports = {
 
         'static': {
             'src': 'static',
-            'dest': './'
+            'dest': './',
+            'extensions': ['*']
         },
 
         'js': {
@@ -28,7 +29,7 @@ module.exports = {
             },
             'extensions': ['js', 'json'],
             'babel': {
-                'presets': ['es2015'],
+                'presets': [['es2015', { 'modules': false }]],
                 'plugins': []
             },
             'extractSharedJs': false
@@ -37,9 +38,6 @@ module.exports = {
         'css': {
             'src': 'sass',
             'dest': 'css',
-            'autoprefixer': {
-                'browsers': ['last 3 version']
-            },
             'sass': {
                 'includePaths': [
                     './node_modules'

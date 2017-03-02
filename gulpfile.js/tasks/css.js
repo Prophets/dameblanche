@@ -21,7 +21,7 @@ const
             .pipe(gulpif(!global.production, sourcemaps.init()))
             .pipe(sass(config.tasks.css.sass))
             .on('error', handleErrors)
-            .pipe(autoprefixer(config.tasks.css.autoprefixer))
+            .pipe(autoprefixer())
             .pipe(gulpif(global.production, cssnano({
                 autoprefixer: false
             })))
