@@ -6,7 +6,7 @@ const
     path = require('path'),
     paths = {
         src: [
-            path.join(config.root.src, config.tasks.static.src, '/**'),
+            path.join(config.root.src, config.tasks.static.src, '/**/*'),
             path.join('!' + config.root.src, config.tasks.static.src, '/README.md')
         ],
         dest: path.join(config.root.dest, config.tasks.static.dest)

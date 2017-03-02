@@ -17,7 +17,8 @@ module.exports = {
 
         'static': {
             'src': 'static',
-            'dest': './'
+            'dest': './',
+            'extensions': ['*']
         },
 
         'js': {
