@@ -1,0 +1,7 @@
+.o-form {
+    $o: #{&};
+
+    &__actions {
+        padding-top: 36px;
+    }
+}

@@ -1,4 +1,4 @@
-// Type trumps
+// Type utilities
 // -------------------------
 
 @each $key, $value in $colors-brand {
@@ -9,15 +9,24 @@
     .u-text--color-gray-#{$key} { color: get-gray-color(#{$key}) !important; }
 }
 
-.u-text--left { text-align: left !important; }
-.u-text--right { text-align: right !important; }
-.u-text--center { text-align: center !important; }
-.u-text--justify { text-align: justify !important; }
-.u-text--nowrap { white-space: nowrap !important; }
+.u-text {
+    &--left { text-align: left !important; }
 
-.u-text--lowercase { text-transform: lowercase !important; }
-.u-text--uppercase { text-transform: uppercase !important; }
-.u-text--capitalize { text-transform: capitalize !important; }
+    &--right { text-align: right !important; }
 
-strong, .u-text--strong { font-weight: $font-weight-bold !important; }
-em, .u-text--italic { font-style: italic !important; }
+    &--center { text-align: center !important; }
+
+    &--justify { text-align: justify !important; }
+
+    &--nowrap { white-space: nowrap !important; }
+
+    &--lowercase { text-transform: lowercase !important; }
+
+    &--uppercase { text-transform: uppercase !important; }
+
+    &--capitalize { text-transform: capitalize !important; }
+
+    &--strong { font-weight: $font-weight-bold !important; }
+
+    &--italic { font-style: italic !important; }
+}
