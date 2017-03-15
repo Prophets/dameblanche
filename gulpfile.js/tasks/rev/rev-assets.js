@@ -8,7 +8,7 @@ const
 // 1) Add md5 hashes to assets referenced by CSS and JS files
 gulp.task('rev-assets', () => {
     // Ignore files that may reference assets. We'll rev them next.
-    const ignoreThese = '!' + path.join(config.root.dest, '/**/*+(css|js|json|html)');
+    const ignoreThese = '!' + path.join(config.root.dest, '/**/*+(css|js|json|html|ico)');
 
     return gulp.src([path.join(config.root.dest, '/**/*'), ignoreThese])
         .pipe(rev())
