@@ -1,3 +1,4 @@
+#!/bin/bash
 git clone https://git.prophets.be/playground/lets-disagree-to-agree.git . 
 #remove this when merged into master
 git fetch origin
