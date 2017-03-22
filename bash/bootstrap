@@ -13,8 +13,6 @@ do
     fi
 done;
 
-echo $branch
-
 #create a project directory if create parameter has been set
 if [ ! -z "$create" ]
     then
