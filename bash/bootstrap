@@ -1,5 +1,6 @@
 #!/bin/bash
 branch="master"
+initGit=true
 
 for ((i=1;i<=$#;i++)); 
 do
@@ -10,6 +11,9 @@ do
     elif [ ${!i} = "-branch" ];
     then ((i++)) 
         branch=${!i};  
+    elif [ ${!i} = "-no-git" ];
+    then ((i++)) 
+        initGit=false
     fi
 done;
 
@@ -24,14 +28,17 @@ fi
 git clone -b "$branch" --depth=1 git@git.prophets.be:playground/lets-disagree-to-agree.git . 
 # remove dameblanch .git
 rm -rf .git 
-# initialize new .git
-git init
-# add commit message hook
-cp git/hooks/prepare-commit-msg .git/hooks/prepare-commit-msg
-# remove git (template hooks) and bash folder
-rm -rf git
-rm -rf bash
-# create initial commit
-git add -A 
-git commit -m 'initial commit'
 
+if $initGit
+    then
+        # initialize new .git
+        git init
+        # add commit message hook
+        cp git/hooks/prepare-commit-msg .git/hooks/prepare-commit-msg
+        # remove git (template hooks) and bash folder
+        rm -rf git
+        rm -rf bash
+        # create initial commit
+        git add -A 
+        git commit -m 'initial commit'
+fi
