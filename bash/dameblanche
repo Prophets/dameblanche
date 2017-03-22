@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -s https://git.prophets.be/playground/lets-disagree-to-agree/raw/13-prefix-commit-messages-with-branch-name/bash/bootstrap | bash
+curl -s https://git.prophets.be/playground/lets-disagree-to-agree/raw/13-prefix-commit-messages-with-branch-name/bash/bootstrap | bash -s "$@"
