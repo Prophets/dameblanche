@@ -21,7 +21,7 @@ if [ ! -z "$create" ]
 fi
 
 #clone the git project
-git clone -b "$branch" https://git.prophets.be/playground/lets-disagree-to-agree.git . 
+git clone -b "$branch" --depth=1 git@git.prophets.be:playground/lets-disagree-to-agree.git . 
 # remove dameblanch .git
 rm -rf .git 
 # initialize new .git
