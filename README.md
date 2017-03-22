@@ -4,11 +4,32 @@ The code in this project is to be used as the base for "every" project.
 
 The purpose of this project is that we reach a singular workflow for our FE projects.
 
+
+## Getting started
+
+First install dameblanche
+
 ```bash
-git clone https://git.prophets.be/playground/lets-disagree-to-agree.git MyApp && cd MyApp
-rm -rf .git && git init && git add -A && git commit -m "initial commit"
-yarn
-yarn start
+curl -o /usr/local/bin/dameblanche https://git.prophets.be/playground/lets-disagree-to-agree/raw/master/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
+```
+
+Create a new project with:
+
+```bash
+dameblanche -create project-folder-name
+```
+
+Or you can run dameblanche within an empty directory
+
+```bash
+mkdir project-folder-name
+cd project-folder-name
+dameblanche
+```
+Dameblanche clones from the master branch by default but it is possible to use another branch
+
+```bash
+dameblanche -create project-folder-name -branch 13-prefix-commit-messages-with-branch-name
 ```
 
 Features | Tools Used
