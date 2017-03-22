@@ -1,3 +1,2 @@
 #!/bin/bash
-bootstrap = "curl -s https://git.prophets.be/playground/lets-disagree-to-agree/raw/13-prefix-commit-messages-with-branch-name/bash/bootstrap | bash -s $@"
-eval $bootstrap
+eval "curl -s https://git.prophets.be/playground/lets-disagree-to-agree/raw/13-prefix-commit-messages-with-branch-name/bash/bootstrap | bash -s $@"
