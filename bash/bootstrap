@@ -32,8 +32,13 @@ if $initGit
         # add commit message hook
         cp git/hooks/prepare-commit-msg .git/hooks/prepare-commit-msg
         # remove git (template hooks) and bash folder
-        rm -rf git
-        rm -rf bash
+fi
+
+rm -rf git
+rm -rf bash
+        
+if $initGit
+    then
         # create initial commit
         git add -A 
         git commit -m 'initial commit'
