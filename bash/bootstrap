@@ -2,20 +2,16 @@
 branch="master"
 initGit=true
 
-for ((i=1;i<=$#;i++)); 
+while getopts "b:n" opt
 do
+  case "$opt" in
+    "b") branch="$OPTARG" ;;
+    "n") noGit="true" ;;
+  esac
+done
+shift $(($OPTIND - 1))
 
-    if [ ${!i} = "-create" ] 
-    then ((i++)) 
-        create=${!i};
-    elif [ ${!i} = "-branch" ];
-    then ((i++)) 
-        branch=${!i};  
-    elif [ ${!i} = "-no-git" ];
-    then ((i++)) 
-        initGit=false
-    fi
-done;
+create=$1
 
 #create a project directory if create parameter has been set
 if [ ! -z "$create" ]

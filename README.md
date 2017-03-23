@@ -16,7 +16,7 @@ curl -o /usr/local/bin/dameblanche https://git.prophets.be/playground/lets-disag
 Create a new project with:
 
 ```bash
-dameblanche -create project-folder-name
+dameblanche project-folder-name
 ```
 
 Or you can run dameblanche within an empty directory
@@ -26,11 +26,19 @@ mkdir project-folder-name
 cd project-folder-name
 dameblanche
 ```
+
+Or use -n flag to disable git initialisation
+
+```bash
+dameblanche  -n project-folder-name
+```
+
 Dameblanche clones from the master branch by default but it is possible to use another branch
 
 ```bash
-dameblanche -create project-folder-name -branch 13-prefix-commit-messages-with-branch-name
+dameblanche  -b 13-prefix-commit-messages-with-branch-name project-folder-name
 ```
+
 
 Features | Tools Used
 ------ | -----
