@@ -6,7 +6,7 @@ while getopts "b:n" opt
 do
   case "$opt" in
     "b") branch="$OPTARG" ;;
-    "n") noGit="true" ;;
+    "n") initGit=false ;;
   esac
 done
 shift $(($OPTIND - 1))
