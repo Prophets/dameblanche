@@ -48,12 +48,12 @@ Features | Tools Used
 **Images** | Compression with [imagemin](https://www.npmjs.com/package/gulp-imagemin)
 **Symbols** | Auto-generated [SVG Sprites](https://github.com/w0rm/gulp-svgstore)
 **Live Updating** | [BrowserSync](http://www.browsersync.io/), [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware), [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
-**Production Builds** | JS and CSS are [uglified](https://github.com/terinjokes/gulp-uglify) and [minified](http://cssnano.co/), [filename md5 hashing (reving)](https://github.com/sindresorhus/gulp-rev), [file size reporting](https://github.com/jaysalvat/gulp-sizereport)
+**Production Builds** | JS and CSS are [uglified](https://github.com/mishoo/UglifyJS2) and [minified](http://cssnano.co/), [filename md5 hashing (reving)](https://github.com/sindresorhus/gulp-rev), [file size reporting](https://github.com/jaysalvat/gulp-sizereport)
 
 ## Usage
 Make sure Node is installed. We recommend using [NVM](https://github.com/creationix/nvm) to manage versions. 
 
-This has been tested on Node `6.7.0`, and should work on newer versions as well. [File an issue](https://git.prophets.be/playground/dameblanche/issues) if it doesn't!
+This has been tested on Node `7.10.0`, and should work on newer versions as well. [File an issue](https://git.prophets.be/playground/dameblanche/issues) if it doesn't!
 
 ### Install Dependencies
 ```bash
