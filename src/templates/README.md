@@ -18,4 +18,4 @@ A global data file is set up at [src/html/data/global.json](src/html/data/global
 
 ## Nunjucks syntax
 
-Check the [helpful tools section](https://git.prophets.be/playground/lets-disagree-to-agree/tree/feature/documentation#nunjucks-syntax-definitions) in the main README on how to install Nunjucks syntax in sublime
+Check the [helpful tools section](https://git.prophets.be/playground/dameblanche/tree/feature/documentation#nunjucks-syntax-definitions) in the main README on how to install Nunjucks syntax in sublime
