@@ -129,3 +129,75 @@ The fix is simple enough though:
 - ```mkdir "Nunjucks Syntax" && cd Nunjucks\ Syntax/```
 - paste [this file](https://raw.githubusercontent.com/mogga/sublime-nunjucks/master/Nunjucks.tmLanguage) there
 - open a .njk file (for example: src/templates/index.njk), and choose "open all with current extension as" > "Nunjucks" from the syntax menu in the bottom right corner of Sublime Text
+
+#### Useful Sublime Text settings
+
+Add these to your settings, for a nicer overall Sublime Text experience. Also contains some useful defaults that are enforced when linting.
+
+```
+{
+    "binary_file_patterns":
+    [
+        "node_modules/**",
+        "vendor/**",
+        "build/**",
+        "*.jpg",
+        "*.jpeg",
+        "*.png",
+        "*.gif",
+        "*.ttf",
+        "*.tga",
+        "*.dds",
+        "*.ico",
+        "*.eot",
+        "*.pdf",
+        "*.swf",
+        "*.jar",
+        "*.zip"
+    ],
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "Desktop.ini",
+        "*.pyc",
+        "._*",
+        "Thumbs.db",
+        ".Spotlight-V100",
+        ".Trashes",
+        "*.sublime-workspace",
+        ".zfproject.xml",
+        "composer.lock",
+        "zend_cache--*"
+    ],
+    "folder_exclude_patterns":
+    [
+        ".sass-cache",
+        ".git",
+        "nbproject",
+        ".svn",
+        ".hg",
+        "CVS",
+        ".bin"
+    ],
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "hot_exit": false,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
+    "match_brackets": true,
+    "match_brackets_angle": true,
+    "shift_tab_unindent": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": true,
+    "ensure_newline_at_eof_on_save": true
+}
+```
