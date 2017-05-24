@@ -55,6 +55,8 @@
   "browserslist": [
     "> 5%",
     "last 3 versions",
-    "not ie <= 10"
+    "not ie <= 10",
+    "not ie_mob <= 11",
+    "not OperaMobile <= 12"
   ]
 }
