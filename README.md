@@ -10,7 +10,7 @@ The purpose of this project is that we reach a singular workflow for our FE proj
 First install dameblanche
 
 ```bash
-curl -o /usr/local/bin/dameblanche https://git.prophets.be/playground/dameblanche/raw/master/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
+curl -o /usr/local/bin/dameblanche https://git.prophets.be/open-source/dameblanche/raw/master/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
 ```
 
 Create a new project with:
@@ -53,7 +53,7 @@ Features | Tools Used
 ## Usage
 Make sure Node is installed. We recommend using [NVM](https://github.com/creationix/nvm) to manage versions. 
 
-This has been tested on Node `7.10.0`, and should work on newer versions as well. [File an issue](https://git.prophets.be/playground/dameblanche/issues) if it doesn't!
+This has been tested on Node `7.10.0`, and should work on newer versions as well. [File an issue](https://git.prophets.be/open-source/dameblanche/issues) if it doesn't!
 
 ### Install Dependencies
 ```bash
