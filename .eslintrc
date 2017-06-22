@@ -5,22 +5,9 @@
         "browser": true,
         "node": true
     },
-    "ecmaFeatures": {
-        "arrowFunctions": true,
-        "blockBindings": true,
-        "classes": true,
-        "defaultParams": true,
-        "destructuring": true,
-        "forOf": true,
-        "generators": false,
-        "modules": true,
-        "objectLiteralComputedProperties": true,
-        "objectLiteralDuplicateProperties": false,
-        "objectLiteralShorthandMethods": true,
-        "objectLiteralShorthandProperties": true,
-        "spread": true,
-        "superInFunctions": true,
-        "templateStrings": true
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
     },
     "rules": {
 
@@ -142,6 +129,7 @@
         "no-multiple-empty-lines": [2, {
             "max": 2
         }],
+        "no-multi-spaces": 2,
         "no-nested-ternary": 2,
         "no-new-object": 2,
         "no-spaced-func": 2,
@@ -159,6 +147,10 @@
         "space-before-blocks": 2,
         "space-before-function-paren": [2, "never"],
         "space-infix-ops": 2,
+        "switch-colon-spacing": [2, {
+            "after": true,
+            "before": false
+        }],
 
         "compat/compat": 1
     }
