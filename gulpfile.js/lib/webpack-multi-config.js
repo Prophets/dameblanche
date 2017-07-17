@@ -68,7 +68,8 @@ module.exports = (env) => {
             webpackConfig.plugins.push(
                 new webpack.optimize.CommonsChunkPlugin({
                     name: 'shared',
-                    filename: filenamePattern
+                    filename: filenamePattern,
+                    minChunks: 2
                 })
             );
         }
