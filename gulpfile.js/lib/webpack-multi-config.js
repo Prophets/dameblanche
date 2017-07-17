@@ -13,7 +13,7 @@ module.exports = (env) => {
         jsDest = path.resolve(config.root.dest, config.tasks.js.dest),
         publicPath = pathToUrl(config.tasks.js.dest, '/'),
         rev = config.tasks.production.rev && env === 'production',
-        filenamePattern = rev ? '[name]-[hash].js' : '[name].js',
+        filenamePattern = rev ? '[name]-[chunkhash].js' : '[name].js',
         webpackConfig = {
             context: jsSrc,
             plugins: [],
