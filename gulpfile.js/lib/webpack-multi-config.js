@@ -43,7 +43,14 @@ module.exports = (env) => {
             config.tasks.js.entries[key] = ['webpack-hot-middleware/client?&reload=true'].concat(entry);
         }
 
-        webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+        webpackConfig.plugins.push(
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('development')
+                }
+            }),
+            new webpack.HotModuleReplacementPlugin()
+        );
     }
 
     if (env !== 'test') {
