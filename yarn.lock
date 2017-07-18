@@ -1801,7 +1801,11 @@ decompress@^3.0.0:
     vinyl-assign "^1.0.1"
     vinyl-fs "^2.2.0"
 
-deep-extend@^0.4.1, deep-extend@~0.4.0:
+deep-extend@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.5.0.tgz#6ef4a09b05f98b0e358d6d93d4ca3caec6672803"
+
+deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
@@ -3207,16 +3211,17 @@ gulp-sourcemaps@^2.4.1:
     through2 "2.X"
     vinyl "1.X"
 
-gulp-stylelint@^3.4.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/gulp-stylelint/-/gulp-stylelint-3.9.0.tgz#a09a67af490b1fb28eb910b4cbfb5412c7f0bb71"
+gulp-stylelint@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-stylelint/-/gulp-stylelint-4.0.0.tgz#440fa7e6c447e92644700e1e2a06a73e6e457750"
   dependencies:
-    chalk "^1.1.3"
-    deep-extend "^0.4.1"
+    chalk "^2.0.1"
+    deep-extend "^0.5.0"
     gulp-util "^3.0.8"
     mkdirp "^0.5.1"
-    promise "^7.1.1"
-    stylelint "^7.9.0"
+    promise "^8.0.1"
+    strip-ansi "^4.0.0"
+    stylelint "^8.0.0"
     through2 "^2.0.3"
 
 gulp-svgstore@^6.1.0:
@@ -5676,9 +5681,9 @@ progress@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.0.tgz#8a1be366bf8fc23db2bd23f10c6fe920b4389d1f"
 
-promise@^7.1.1:
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
+promise@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/promise/-/promise-8.0.1.tgz#e45d68b00a17647b6da711bf85ed6ed47208f450"
   dependencies:
     asap "~2.0.3"
 
@@ -6622,7 +6627,7 @@ stylelint-scss@^1.5.1:
     postcss-value-parser "^3.3.0"
     stylelint "^7.0.3"
 
-stylelint@^7.0.3, stylelint@^7.9.0:
+stylelint@^7.0.3:
   version "7.11.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.11.1.tgz#c816c658baf7d9e5d167d82273fead37c97ae49d"
   dependencies:
