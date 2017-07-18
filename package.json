@@ -33,7 +33,7 @@
     "gulp-sequence": "^0.4.6",
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-stylelint": "^3.4.0",
+    "gulp-stylelint": "^4.0.0",
     "gulp-svgstore": "^6.1.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.10",
