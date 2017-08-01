@@ -10,3 +10,4 @@ yarn add babel-preset-stage-1
 # replace current config file with react recipe config file.
 cp -f gulpfile.js/recipes/react/config.js gulpfile.js/config.js
 cp -rf gulpfile.js/recipes/react/src/* src/
+rm -rf src/js/modules
