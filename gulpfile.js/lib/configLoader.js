@@ -1,7 +1,6 @@
 const fs = require('fs');
 const Path = require('path');
 
-
 const configLoader = () => {
     const currentPath = Path.resolve(__dirname, '../tasks');
     const config = {};
@@ -10,6 +9,7 @@ const configLoader = () => {
     });
     return config;
 };
+
 const configDefaults = configLoader();
 const config = require('../config');
 
