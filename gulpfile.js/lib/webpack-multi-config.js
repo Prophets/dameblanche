@@ -13,7 +13,7 @@ module.exports = (env) => {
         jsDest = path.resolve(config.root.dest, config.tasks.webpackproduction.dest),
         publicPath = pathToUrl(config.tasks.webpackproduction.dest, '/'),
         rev = config.tasks.production.rev && env === 'production',
-        filenamePattern = rev ? '[name]-[hash].js' : '[name].js',
+        filenamePattern = rev ? '[name]-[chunkhash].js' : '[name].js',
         webpackConfig = {
             context: jsSrc,
             plugins: [],
@@ -43,7 +43,14 @@ module.exports = (env) => {
             config.tasks.webpackproduction.entries[key] = ['webpack-hot-middleware/client?&reload=true'].concat(entry);
         }
 
-        webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+        webpackConfig.plugins.push(
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('development')
+                }
+            }),
+            new webpack.HotModuleReplacementPlugin()
+        );
     }
 
     if (env !== 'test') {
@@ -61,7 +68,8 @@ module.exports = (env) => {
             webpackConfig.plugins.push(
                 new webpack.optimize.CommonsChunkPlugin({
                     name: 'shared',
-                    filename: filenamePattern
+                    filename: filenamePattern,
+                    minChunks: 2
                 })
             );
         }
