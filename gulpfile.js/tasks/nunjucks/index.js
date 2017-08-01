@@ -45,5 +45,5 @@ const
             .pipe(customNotifier({ title: 'Template compiled' }));
     };
 
-gulp.task('nunjucks', templatesTask);
+gulp.task('templates', templatesTask);
 module.exports = templatesTask;

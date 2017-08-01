@@ -11,7 +11,7 @@ const
             if (task) {
                 const glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}');
                 watch(glob, () => {
-                    require('./' + taskName)();
+                    require('../' + taskName)();
                 });
             }
         });

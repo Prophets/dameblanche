@@ -1,4 +1,5 @@
 module.exports = {
+    'taskName': 'js',
     'src': 'js',
     'dest': 'js',
     'entries': {

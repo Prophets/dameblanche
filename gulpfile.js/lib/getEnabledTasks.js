@@ -4,19 +4,18 @@ const
 
     // Grouped by what can run in parallel
     assetTasks = ['images', 'svgSprite'],
-    codeTasks = ['nunjucks', 'css', 'js'],
+    codeTasks = ['nunjucks', 'react', 'css', 'webpack'],
     lintTasks = ['eslint', 'stylelint'];
 
 module.exports = (env) => {
     const
         matchFilter = (task) => {
-            let t = task;
 
-            if (config.tasks[t]) {
+            if (config.tasks[task]) {
+                let t = config.tasks[task].taskName;
                 if (t === 'js') {
                     t = env === 'production' ? 'webpack:production' : false;
                 }
-
                 return t;
             }
 
@@ -25,7 +24,6 @@ module.exports = (env) => {
         exists = (value) => {
             return !!value;
         };
-
     return {
         assetTasks: compact(assetTasks.map(matchFilter).filter(exists)),
         codeTasks: compact(codeTasks.map(matchFilter).filter(exists)),

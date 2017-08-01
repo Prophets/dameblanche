@@ -1,0 +1,33 @@
+const
+    getArg = require('./lib/getArg'),
+    destFolder = getArg('--build') ? './build' : './public',
+    requireDir = require('require-dir');
+
+module.exports = {
+    'root': {
+        'src': './src',
+        'dest': destFolder
+    },
+
+    'tasks': {
+        'browserSync': {},
+        'static': {},
+        'webpack': {
+            'babel': {
+                'presets': [['es2015', { 'modules': false }], 'stage-1'],
+                'plugins': [
+                    'transform-react-jsx',
+                    'transform-decorators-legacy',
+                    ['transform-object-rest-spread', { 'useBuiltIns': true }]
+                ]
+            }
+        },
+        'css': {},
+        'react': {},
+        'images': {},
+        'svgsprite': {},
+        'production': {},
+        'eslint': {},
+        'stylelint': {}
+    }
+};
