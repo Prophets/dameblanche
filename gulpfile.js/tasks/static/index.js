@@ -1,7 +1,7 @@
 const
-    config = require('../config'),
+    config = require('../../lib/configLoader'),
     changed = require('gulp-changed'),
-    customNotifier = require('../lib/customNotifier'),
+    customNotifier = require('../../lib/customNotifier'),
     gulp = require('gulp'),
     path = require('path'),
     paths = {

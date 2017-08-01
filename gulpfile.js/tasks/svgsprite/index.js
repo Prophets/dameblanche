@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../lib/configLoader');
 if (!config.tasks.svgSprite) return;
 
 const
@@ -6,7 +6,7 @@ const
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     svgstore = require('gulp-svgstore'),
-    customNotifier = require('../lib/customNotifier'),
+    customNotifier = require('../../lib/customNotifier'),
     path = require('path'),
     svgSpriteTask = () => {
         const settings = {

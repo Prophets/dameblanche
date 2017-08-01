@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../lib/configLoader');
 if (!config.tasks.stylelint) return;
 
 const

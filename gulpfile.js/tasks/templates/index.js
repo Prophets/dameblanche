@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../lib/configLoader');
 if (!config.tasks.templates) return;
 
 const
@@ -6,8 +6,8 @@ const
     data = require('gulp-data'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
-    handleErrors = require('../lib/handleErrors'),
-    customNotifier = require('../lib/customNotifier'),
+    handleErrors = require('../../lib/handleErrors'),
+    customNotifier = require('../../lib/customNotifier'),
     htmlmin = require('gulp-htmlmin'),
     path = require('path'),
     render = require('gulp-nunjucks-render'),

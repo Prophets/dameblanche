@@ -1,5 +1,5 @@
 const
-    config = require('../config'),
+    config = require('../../lib/configLoader'),
     gulp = require('gulp'),
     path = require('path'),
     watch = require('gulp-watch'),
