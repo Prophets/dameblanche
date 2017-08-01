@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Path = require('path');
+const defaultsDeep = require('lodash/defaultsdeep');
 
 const configLoader = () => {
     const currentPath = Path.resolve(__dirname, '../tasks');
@@ -15,7 +16,8 @@ const config = require('../config');
 
 for (let taskName in config.tasks) {
     if (config.tasks[taskName]) {
-        config.tasks[taskName] = Object.assign(configDefaults[taskName], config.tasks[taskName]);
+        config.tasks[taskName] = defaultsDeep(configDefaults[taskName], config.tasks[taskName]);
     }
 }
+
 module.exports = config;

@@ -20,6 +20,9 @@ module.exports = {
                     'transform-decorators-legacy',
                     ['transform-object-rest-spread', { 'useBuiltIns': true }]
                 ]
+            },
+            'entries': {
+                'app': ['./app.js']
             }
         },
         'css': {},
