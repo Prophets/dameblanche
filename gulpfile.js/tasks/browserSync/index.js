@@ -4,7 +4,7 @@ const
     browserSync = require('browser-sync'),
     gulp = require('gulp'),
     webpack = require('webpack'),
-    webpackMultiConfig = require('../webpackproduction/webpack-multi-config'),
+    webpackMultiConfig = require('../webpack/webpack-multi-config'),
     config = require('../../lib/configLoader'),
     pathToUrl = require('../../lib/pathToUrl'),
 

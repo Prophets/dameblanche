@@ -1,5 +1,5 @@
 const config = require('../../lib/configLoader');
-if (!config.tasks.webpackproduction) return;
+if (!config.tasks.webpack) return;
 
 const
     path = require('path'),
@@ -9,9 +9,9 @@ const
 
 module.exports = (env) => {
     const
-        jsSrc = path.resolve(config.root.src, config.tasks.webpackproduction.src),
-        jsDest = path.resolve(config.root.dest, config.tasks.webpackproduction.dest),
-        publicPath = pathToUrl(config.tasks.webpackproduction.dest, '/'),
+        jsSrc = path.resolve(config.root.src, config.tasks.webpack.src),
+        jsDest = path.resolve(config.root.dest, config.tasks.webpack.dest),
+        publicPath = pathToUrl(config.tasks.webpack.dest, '/'),
         rev = config.tasks.production.rev && env === 'production',
         filenamePattern = rev ? '[name]-[chunkhash].js' : '[name].js',
         webpackConfig = {
@@ -22,14 +22,14 @@ module.exports = (env) => {
                     jsSrc,
                     'node_modules'
                 ],
-                extensions: config.tasks.webpackproduction.extensions.map((extension) => '.' + extension)
+                extensions: config.tasks.webpack.extensions.map((extension) => '.' + extension)
             },
             module: {
                 rules: [{
                     test: /\.js$/,
                     loader: 'babel-loader',
                     exclude: /node_modules/,
-                    query: config.tasks.webpackproduction.babel
+                    query: config.tasks.webpack.babel
                 }]
             }
         };
@@ -38,9 +38,9 @@ module.exports = (env) => {
         webpackConfig.devtool = 'inline-source-map';
 
         // Create new entries object with webpack-hot-middleware added
-        for (let key in config.tasks.webpackproduction.entries) {
-            const entry = config.tasks.webpackproduction.entries[key];
-            config.tasks.webpackproduction.entries[key] = ['webpack-hot-middleware/client?&reload=true'].concat(entry);
+        for (let key in config.tasks.webpack.entries) {
+            const entry = config.tasks.webpack.entries[key];
+            config.tasks.webpack.entries[key] = ['webpack-hot-middleware/client?&reload=true'].concat(entry);
         }
 
         webpackConfig.plugins.push(
@@ -55,7 +55,7 @@ module.exports = (env) => {
 
     if (env !== 'test') {
         // Karma doesn't need entry points or output settings
-        webpackConfig.entry = config.tasks.webpackproduction.entries;
+        webpackConfig.entry = config.tasks.webpack.entries;
 
         webpackConfig.output = {
             path: path.normalize(jsDest),
@@ -63,7 +63,7 @@ module.exports = (env) => {
             publicPath: publicPath
         };
 
-        if (config.tasks.webpackproduction.extractSharedJs) {
+        if (config.tasks.webpack.extractSharedJs) {
             // Factor out common dependencies into a shared.js
             webpackConfig.plugins.push(
                 new webpack.optimize.CommonsChunkPlugin({

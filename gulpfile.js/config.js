@@ -12,7 +12,7 @@ module.exports = {
     'tasks': {
         'browserSync': {},
         'static': {},
-        'webpackproduction': {},
+        'webpack': {},
         'css': {},
         'templates': {},
         'images': {},

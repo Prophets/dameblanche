@@ -15,7 +15,6 @@ const config = require('../config');
 
 for (let taskName in config.tasks) {
     if (config.tasks[taskName]) {
-        console.log(taskName);
         config.tasks[taskName] = Object.assign(configDefaults[taskName], config.tasks[taskName]);
     }
 }
