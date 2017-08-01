@@ -4,7 +4,7 @@ const
 
     // Grouped by what can run in parallel
     assetTasks = ['images', 'svgSprite'],
-    codeTasks = ['templates', 'css', 'js'],
+    codeTasks = ['nunjucks', 'css', 'js'],
     lintTasks = ['eslint', 'stylelint'];
 
 module.exports = (env) => {

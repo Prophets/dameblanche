@@ -14,7 +14,7 @@ module.exports = {
         'static': {},
         'webpack': {},
         'css': {},
-        'templates': {},
+        'nunjucks': {},
         'images': {},
         'svgsprite': {},
         'production': {},
