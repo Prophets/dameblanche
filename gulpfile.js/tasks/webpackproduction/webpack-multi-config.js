@@ -1,9 +1,9 @@
-const config = require('./configLoader');
+const config = require('../../lib/configLoader');
 if (!config.tasks.webpackproduction) return;
 
 const
     path = require('path'),
-    pathToUrl = require('./pathToUrl'),
+    pathToUrl = require('../../lib/pathToUrl'),
     webpack = require('webpack'),
     WebpackManifest = require('./webpackManifest');
 
