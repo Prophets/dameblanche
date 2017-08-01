@@ -24,7 +24,6 @@ module.exports = {
             }
         },
         'css': {},
-        'react': {},
         'images': {},
         'svgsprite': {},
         'production': {},
