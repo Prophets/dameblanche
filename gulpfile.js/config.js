@@ -1,7 +1,6 @@
 const
     getArg = require('./lib/getArg'),
-    destFolder = getArg('--build') ? './build' : './public',
-    requireDir = require('require-dir');
+    destFolder = getArg('--build') ? './build' : './public';
 
 module.exports = {
     'root': {
