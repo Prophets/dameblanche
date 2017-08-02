@@ -6,7 +6,10 @@ const configLoader = () => {
     const currentPath = Path.resolve(__dirname, '../tasks');
     const config = {};
     fs.readdirSync(currentPath).forEach((item) => {
-        config[item] = require(currentPath + '/' + item + '/config') || {};
+        const configPath = currentPath + '/' + item + '/config';
+        if (fs.existsSync(configPath + '.js')) {
+            config[item] = require(configPath ) || {};
+        }
     });
     return config;
 };
