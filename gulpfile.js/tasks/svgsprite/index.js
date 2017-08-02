@@ -1,5 +1,5 @@
 const config = require('../../lib/configLoader');
-if (!config.tasks.svgSprite) return;
+if (!config.tasks.svgsprite) return;
 
 const
     browserSync = require('browser-sync'),
@@ -10,8 +10,8 @@ const
     path = require('path'),
     svgSpriteTask = () => {
         const settings = {
-            src: path.join(config.root.src, config.tasks.svgSprite.src, '/*.svg'),
-            dest: path.join(config.root.dest, config.tasks.svgSprite.dest)
+            src: path.join(config.root.src, config.tasks.svgsprite.src, '/*.svg'),
+            dest: path.join(config.root.dest, config.tasks.svgsprite.dest)
         };
 
         return gulp.src(settings.src)
@@ -23,5 +23,5 @@ const
     };
 
 
-gulp.task('svgSprite', svgSpriteTask);
+gulp.task('svgsprite', svgSpriteTask);
 module.exports = svgSpriteTask;
