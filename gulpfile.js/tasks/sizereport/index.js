@@ -1,5 +1,5 @@
 const
-    config = require('../config'),
+    config = require('../../lib/configLoader'),
     gulp = require('gulp'),
     sizereport = require('gulp-sizereport');
 

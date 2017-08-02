@@ -1,0 +1,1 @@
+Methods that perform common, often reused functions.

@@ -1,4 +1,5 @@
-const config = require('../config');
+const config = require('../../lib/configLoader');
+
 if (!config.tasks.css) return;
 
 const
@@ -7,8 +8,8 @@ const
     browserSync = require('browser-sync'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    handleErrors = require('../lib/handleErrors'),
-    customNotifier = require('../lib/customNotifier'),
+    handleErrors = require('../../lib/handleErrors'),
+    customNotifier = require('../../lib/customNotifier'),
     autoprefixer = require('gulp-autoprefixer'),
     path = require('path'),
     cssnano = require('gulp-cssnano'),

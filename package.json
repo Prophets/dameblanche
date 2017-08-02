@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "start": "gulp",
-    "build": "gulp production --build"
+    "build": "gulp production --build",
+    "recipe-react": "./gulpfile.js/recipes/react/setup.sh"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

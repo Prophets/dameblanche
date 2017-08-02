@@ -1,8 +1,8 @@
 const
-    config = require('../config'),
+    config = require('../../lib/configLoader'),
     gulp = require('gulp'),
     gulpSequence = require('gulp-sequence'),
-    getEnabledTasks = require('../lib/getEnabledTasks'),
+    getEnabledTasks = require('../../lib/getEnabledTasks'),
     productionTask = (cb) => {
         global.production = true;
 

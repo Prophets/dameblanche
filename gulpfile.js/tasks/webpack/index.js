@@ -1,10 +1,10 @@
-const config = require('../config');
-if (!config.tasks.js) return;
+const config = require('../../lib/configLoader');
+if (!config.tasks.webpack) return;
 
 const
-    webpackConfig = require('../lib/webpack-multi-config')('production'),
+    webpackConfig = require('./webpack-multi-config')('production'),
     gulp = require('gulp'),
-    logger = require('../lib/compileLogger'),
+    logger = require('./compileLogger'),
     webpack = require('webpack'),
     webpackProductionTask = (callback) => {
         webpack(webpackConfig, (err, stats) => {

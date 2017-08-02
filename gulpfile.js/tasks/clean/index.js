@@ -1,7 +1,7 @@
 const
     gulp = require('gulp'),
     del = require('del'),
-    config = require('../config'),
+    config = require('../../lib/configLoader'),
     cleanTask = (cb) => {
         del([config.root.dest]).then(() => {
             cb();
