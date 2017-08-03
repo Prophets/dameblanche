@@ -4,9 +4,9 @@ const
     browserSync = require('browser-sync'),
     gulp = require('gulp'),
     webpack = require('webpack'),
-    webpackMultiConfig = require('../lib/webpack-multi-config'),
-    config = require('../config'),
-    pathToUrl = require('../lib/pathToUrl'),
+    webpackMultiConfig = require('../webpack/webpack-multi-config'),
+    config = require('../../lib/configLoader'),
+    pathToUrl = require('../../lib/pathToUrl'),
 
     browserSyncTask = () => {
         const

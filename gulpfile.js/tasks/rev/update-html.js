@@ -1,6 +1,6 @@
 const
     gulp = require('gulp'),
-    config = require('../../config'),
+    config = require('../../lib/configLoader'),
     revReplace = require('gulp-rev-replace'),
     path = require('path');
 

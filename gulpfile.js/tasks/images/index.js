@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../lib/configLoader');
 if (!config.tasks.images) return;
 
 const
@@ -6,7 +6,7 @@ const
     changed = require('gulp-changed'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
-    customNotifier = require('../lib/customNotifier'),
+    customNotifier = require('../../lib/customNotifier'),
     path = require('path'),
     paths = {
         src: path.join(config.root.src, config.tasks.images.src, '/**/*.{' + config.tasks.images.extensions + '}'),
