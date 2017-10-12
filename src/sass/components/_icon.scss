@@ -1,4 +1,6 @@
-.o-icon {
+$b: 'icon';
+
+.#{$b} {
     width: 1em;
     height: 1em;
     fill: currentColor;
