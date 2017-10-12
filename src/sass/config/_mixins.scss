@@ -31,3 +31,27 @@
         clear: both;
     }
 }
+
+@mixin triangle($dir, $size, $color, $altSize: $size) {
+    border: $size transparent solid;
+
+    @if ($dir == 'top' or $dir == 'up') {
+        border-bottom-color: $color;
+        border-bottom-width: $altSize;
+    }
+
+    @else if ($dir == 'right' or $dir == 'after') {
+        border-left-color: $color;
+        border-left-width: $altSize;
+    }
+
+    @else if ($dir == 'bottom' or $dir == 'down') {
+        border-top-color: $color;
+        border-top-width: $altSize;
+    }
+
+    @else if ($dir == 'left' or $dir == 'before') {
+        border-right-color: $color;
+        border-right-width: $altSize;
+    }
+}
