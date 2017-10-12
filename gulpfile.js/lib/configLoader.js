@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Path = require('path');
-const defaultsDeep = require('lodash/defaultsdeep');
+const defaultsDeep = require('lodash/defaultsDeep');
 
 const configLoader = () => {
     const currentPath = Path.resolve(__dirname, '../tasks');
