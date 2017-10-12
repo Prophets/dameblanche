@@ -2,16 +2,16 @@
 $font-family-base:                  '...', sans-serif !default;
 $font-family-alt:                   '...', sans-serif !default;
 
-$font-size-small:                   12px !default;
-$font-size-base:                    16px !default;
-$font-size-medium:                  24px !default;
-$font-size-large:                   32px !default;
+$font-size-small:                   0.75rem !default; // 12px
+$font-size-base:                    1rem !default; // 16px
+$font-size-medium:                  1.5rem !default; // 24px
+$font-size-large:                   2rem !default; // 32px
 
-$font-size-h1:                      30px !default;
-$font-size-h2:                      24px !default;
-$font-size-h3:                      18px !default;
+$font-size-h1:                      2rem !default; // 32px
+$font-size-h2:                      1.5rem !default; //24px
+$font-size-h3:                      1.125rem !default; //18px
 
-$font-weight-regular:               500 !default;
+$font-weight-regular:               400 !default;
 $font-weight-bold:                  800 !default;
 
 $line-height-base:                  1.6 !default;
