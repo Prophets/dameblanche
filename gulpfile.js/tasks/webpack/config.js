@@ -4,7 +4,7 @@ module.exports = {
     'dest': 'js',
     'extensions': ['js', 'json'],
     'babel': {
-        'presets': [['es2015', { 'modules': false }]],
+        'presets': [['env', { 'modules': false }]],
         'plugins': []
     },
     'extractSharedJs': false
