@@ -15,7 +15,13 @@ const
         };
 
         return gulp.src(settings.src)
-            .pipe(imagemin())
+            .pipe(imagemin([
+                imagemin.svgo({
+                    plugins: [{
+                        removeViewBox: false
+                    }]
+                })
+            ]))
             .pipe(svgstore())
             .pipe(gulp.dest(settings.dest))
             .on('end', browserSync.reload)
