@@ -18,4 +18,9 @@ module.exports = ({plugin, message, file, fileName} = {}) => {
 
         // Keep gulp from hanging on this task
     if (typeof this.emit === 'function') this.emit('end');
+
+    // Hard exit build process on error when in production -- needed for CI
+    if (global.production) {
+        process.exit(1);
+    }
 };
