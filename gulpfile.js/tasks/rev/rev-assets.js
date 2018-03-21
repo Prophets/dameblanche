@@ -1,9 +1,8 @@
-const
-    config = require('../../lib/configLoader'),
-    gulp = require('gulp'),
-    path = require('path'),
-    rev = require('gulp-rev'),
-    revNapkin = require('gulp-rev-napkin');
+const gulp = require('gulp');
+const path = require('path');
+const rev = require('gulp-rev');
+const revNapkin = require('gulp-rev-napkin');
+const config = require('../../lib/configLoader');
 
 // 1) Add md5 hashes to assets referenced by CSS and JS files
 gulp.task('rev-assets', () => {

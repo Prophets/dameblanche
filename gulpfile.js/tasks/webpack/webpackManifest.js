@@ -1,18 +1,18 @@
-const
-    path = require('path'),
-    fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 
 module.exports = function(publicPath, dest, filename = 'rev-manifest.json') {
     return function() {
-        this.plugin('done', (statistics) => {
-            const
-                stats = statistics.toJson(),
-                chunks = stats.assetsByChunkName,
-                manifest = {};
+        this.hooks.done.tap('revManifest', (statistics) => {
+            const stats = statistics.toJson();
+            const chunks = stats.assetsByChunkName;
+            const manifest = {};
 
             for (let key in chunks) {
-                const originalFilename = key + '.js';
-                manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key]);
+                if (Object.prototype.hasOwnProperty.call(chunks, key)) {
+                    const originalFilename = key + '.js';
+                    manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key]);
+                }
             }
 
             fs.writeFileSync(

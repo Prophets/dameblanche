@@ -1,6 +1,5 @@
-const
-    getArg = require('./lib/getArg'),
-    destFolder = getArg('--build') ? './build' : './public';
+const getArg = require('./lib/getArg');
+const destFolder = getArg('--build') ? './build' : './public';
 
 module.exports = {
     'root': {

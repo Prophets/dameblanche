@@ -1,9 +1,8 @@
-const
-    config = require('../../lib/configLoader'),
-    gulp = require('gulp'),
-    path = require('path'),
-    rev = require('gulp-rev'),
-    revNapkin = require('gulp-rev-napkin');
+const gulp = require('gulp');
+const path = require('path');
+const rev = require('gulp-rev');
+const revNapkin = require('gulp-rev-napkin');
+const config = require('../../lib/configLoader');
 
 // 4) Rev and compress CSS and JS files (this is done after assets, so that if a
 //    referenced asset hash changes, the parent hash will change as well
