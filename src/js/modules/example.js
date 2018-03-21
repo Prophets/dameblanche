@@ -1,6 +1,6 @@
 const proto = {
     init() {
-        console.log('[MODULE EXAMPLE] init');
+        // init of example module
     }
 };
 

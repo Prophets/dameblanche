@@ -1,7 +1,12 @@
 module.exports = (key) => {
-    const
-        index = process.argv.indexOf(key),
-        next = process.argv[index + 1];
+    const index = process.argv.indexOf(key);
+    const next = process.argv[index + 1];
 
-    return (index < 0) ? null : (!next || next[0] === '-') ? true : next;
+    if (index < 0) {
+        return null;
+    } else if (!next || next[0] === '-') {
+        return true;
+    }
+
+    return next;
 };

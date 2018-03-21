@@ -1,7 +1,6 @@
-const
-    colors = require('ansi-colors'),
-    prettifyTime = require('./prettifyTime'),
-    handleErrors = require('../../lib/handleErrors');
+const colors = require('ansi-colors');
+const prettifyTime = require('./prettifyTime');
+const handleErrors = require('../../lib/handleErrors');
 
 module.exports = (err, stats) => {
     if (err) throw new Error(err);
