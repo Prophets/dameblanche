@@ -31,6 +31,12 @@ module.exports = (env) => {
                     exclude: /node_modules/,
                     query: config.tasks.webpack.babel
                 }]
+            },
+            mode: 'development',
+            output: {
+                path: path.normalize(jsDest),
+                filename: filenamePattern,
+                publicPath: publicPath
             }
         };
 
@@ -44,54 +50,29 @@ module.exports = (env) => {
         }
 
         webpackConfig.plugins.push(
-            new webpack.DefinePlugin({
-                'process.env': {
-                    'NODE_ENV': JSON.stringify('development')
-                }
-            }),
             new webpack.HotModuleReplacementPlugin()
         );
     }
 
-    if (env !== 'test') {
-        // Karma doesn't need entry points or output settings
-        webpackConfig.entry = config.tasks.webpack.entries;
+    webpackConfig.entry = config.tasks.webpack.entries;
 
-        webpackConfig.output = {
-            path: path.normalize(jsDest),
-            filename: filenamePattern,
-            publicPath: publicPath
-        };
-
-        if (config.tasks.webpack.extractSharedJs) {
-            // Factor out common dependencies into a shared.js
-            webpackConfig.plugins.push(
-                new webpack.optimize.CommonsChunkPlugin({
-                    name: 'shared',
-                    filename: filenamePattern,
-                    minChunks: 2
-                })
-            );
-        }
+    if (config.tasks.webpack.extractSharedJs) {
+        // Factor out common dependencies into a shared.js
+        webpackConfig.plugins.push(
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'shared',
+                filename: filenamePattern,
+                minChunks: 2
+            })
+        );
     }
 
     if (env === 'production') {
+        webpackConfig.mode = 'production';
+
         if (rev) {
             webpackConfig.plugins.push(new WebpackManifest(publicPath, config.root.dest));
         }
-        webpackConfig.plugins.push(
-            new webpack.DefinePlugin({
-                'process.env': {
-                    'NODE_ENV': JSON.stringify('production')
-                }
-            }),
-            new webpack.LoaderOptionsPlugin({
-                minimize: true,
-                debug: false
-            }),
-            new webpack.optimize.UglifyJsPlugin(),
-            new webpack.NoEmitOnErrorsPlugin()
-        );
     }
 
     return webpackConfig;

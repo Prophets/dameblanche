@@ -4,7 +4,7 @@ const
 
 module.exports = function(publicPath, dest, filename = 'rev-manifest.json') {
     return function() {
-        this.plugin('done', (statistics) => {
+        this.hooks.done.tap('revManifest', (statistics) => {
             const
                 stats = statistics.toJson(),
                 chunks = stats.assetsByChunkName,

@@ -1,10 +1,10 @@
 const
-    gutil = require('gulp-util'),
+    colors = require('ansi-colors'),
     prettifyTime = require('./prettifyTime'),
     handleErrors = require('../../lib/handleErrors');
 
 module.exports = (err, stats) => {
-    if (err) throw new gutil.PluginError('webpack', err);
+    if (err) throw new Error(err);
 
     let statColor = stats.compilation.warnings.length < 1 ? 'green' : 'yellow';
 
@@ -15,7 +15,7 @@ module.exports = (err, stats) => {
         });
     } else {
         const compileTime = prettifyTime(stats.endTime - stats.startTime);
-        gutil.log(gutil.colors[statColor](stats));
-        gutil.log('Compiled with', gutil.colors.cyan('webpack'), 'in', gutil.colors.magenta(compileTime));
+        console.log(colors[statColor](stats));
+        console.log('Compiled with', colors.cyan('webpack'), 'in', colors.magenta(compileTime));
     }
 };

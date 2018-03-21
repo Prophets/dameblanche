@@ -4,7 +4,7 @@ if (!config.tasks.webpack) return;
 const
     webpackConfig = require('./webpack-multi-config')('production'),
     gulp = require('gulp'),
-    logger = require('./compileLogger'),
+    logger = require('./webpackProductionBuildLogger'),
     webpack = require('webpack'),
     webpackProductionTask = (callback) => {
         webpack(webpackConfig, (err, stats) => {

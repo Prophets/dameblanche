@@ -1,6 +1,6 @@
 const
     notify = require('gulp-notify'),
-    gutil = require('gulp-util');
+    colors = require('ansi-colors');
 
 module.exports = ({plugin, message, file, fileName} = {}) => {
     notify.onError({
@@ -8,7 +8,7 @@ module.exports = ({plugin, message, file, fileName} = {}) => {
         message: 'error'
     }).apply(this, arguments);
 
-    const chalk = gutil.colors.red;
+    const chalk = colors.red;
     let report = '';
 
     report += `\n ${chalk(`${message}`)} \n\n`;
