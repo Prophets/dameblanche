@@ -13,19 +13,19 @@ const fs = require('fs');
 const handleErrors = require('../../lib/handleErrors');
 const customNotifier = require('../../lib/customNotifier');
 
-const exclude = path.normalize('!**/{' + config.tasks.nunjucks.excludeFolders.join(',') + '}/**');
-
-const paths = {
-    src: [path.join(config.root.src, config.tasks.nunjucks.src, '/**/*.{' + config.tasks.nunjucks.extensions + '}'), exclude],
-    dest: path.join(config.root.dest, config.tasks.nunjucks.dest)
-};
-
-const getData = () => {
-    const dataPath = path.resolve(config.root.src, config.tasks.nunjucks.src, config.tasks.nunjucks.dataFile);
-    return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-};
-
 const templatesTask = () => {
+    const exclude = path.normalize('!**/{' + config.tasks.nunjucks.excludeFolders.join(',') + '}/**');
+
+    const paths = {
+        src: [path.join(config.root.src, config.tasks.nunjucks.src, '/**/*.{' + config.tasks.nunjucks.extensions + '}'), exclude],
+        dest: path.join(config.root.dest, config.tasks.nunjucks.dest)
+    };
+
+    const getData = () => {
+        const dataPath = path.resolve(config.root.src, config.tasks.nunjucks.src, config.tasks.nunjucks.dataFile);
+        return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    };
+
     return gulp.src(paths.src)
         .pipe(data(getData))
         .on('error', handleErrors)
@@ -35,7 +35,7 @@ const templatesTask = () => {
                 watch: false
             },
             manageEnv(env) {
-                env.addGlobal('imagePath', config.tasks.images.dest);
+                env.addGlobal('imagePath', config.tasks.images ? config.tasks.images.dest : 'images');
             }
         }))
         .on('error', handleErrors)

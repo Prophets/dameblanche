@@ -1,10 +1,17 @@
+const config = require('../../lib/configLoader');
+
 const gulp = require('gulp');
 const path = require('path');
 const watch = require('gulp-watch');
-const config = require('../../lib/configLoader');
+const getEnabledTasks = require('../../lib/getEnabledTasks');
 
 const watchTask = () => {
-    const watchableTasks = ['images', 'svgsprite', 'nunjucks', 'css', 'eslint', 'stylelint', 'static'];
+    const tasks = getEnabledTasks();
+    const watchableTasks = [
+        ...tasks.assetTasks,
+        ...tasks.codeTasks,
+        ...tasks.lintTasks
+    ];
 
     watchableTasks.forEach((taskName) => {
         const task = config.tasks[taskName];

@@ -2,7 +2,7 @@ const config = require('../config');
 const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
-const assetTasks = ['images', 'svgsprite'];
+const assetTasks = ['images', 'svgsprite', 'static'];
 const codeTasks = ['nunjucks', 'react', 'css', 'webpack'];
 const lintTasks = ['eslint', 'stylelint'];
 
