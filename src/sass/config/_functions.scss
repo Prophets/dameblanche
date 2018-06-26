@@ -26,6 +26,10 @@
     @return get-color($colors-gray, 'primary', $shade);
 }
 
+@function get-social-color($key, $shade: 'base') {
+    @return get-color($colors-social, $key, $shade);
+}
+
 @function image-url($path) {
     @return url('#{$image-url-path}#{$path}');
 }
