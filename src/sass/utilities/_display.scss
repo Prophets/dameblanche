@@ -1,0 +1,24 @@
+@mixin display-utility($bp) {
+    .u-d {
+        &-none-#{$bp} { display: none !important; }
+        &-inline-#{$bp} { display: inline !important; }
+        &-inline-block-#{$bp} { display: inline-block !important; }
+        &-block-#{$bp} { display: block !important; }
+        &-table-#{$bp} { display: table !important; }
+        &-table-cell-#{$bp} { display: table-cell !important; }
+        &-flex-#{$bp} { display: flex !important; }
+        &-inline-flex-#{$bp} { display: inline-flex !important; }
+    }
+}
+
+@include display-utility(xs);
+
+@media (min-width: $breakpoint-sm) { @include display-utility(sm); }
+
+@media (min-width: $breakpoint-md) { @include display-utility(md); }
+
+@media (min-width: $breakpoint-lg) { @include display-utility(lg); }
+
+@media (min-width: $breakpoint-xl) { @include display-utility(xl); }
+
+@media (min-width: $breakpoint-xxl) { @include display-utility(xxl); }
