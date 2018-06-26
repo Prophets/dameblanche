@@ -13,12 +13,12 @@ const path = require('path');
 const handleErrors = require('../../lib/handleErrors');
 const customNotifier = require('../../lib/customNotifier');
 
-const paths = {
-    src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
-    dest: path.join(config.root.dest, config.tasks.css.dest)
-};
-
 const cssTask = () => {
+    const paths = {
+        src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
+        dest: path.join(config.root.dest, config.tasks.css.dest)
+    };
+
     return gulp.src(paths.src)
         .pipe(gulpif(!global.production, sourcemaps.init()))
         .pipe(sass(config.tasks.css.sass))

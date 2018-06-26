@@ -10,12 +10,12 @@ const path = require('path');
 const customNotifier = require('../../lib/customNotifier');
 
 const svgSpriteTask = () => {
-    const settings = {
+    const paths = {
         src: path.join(config.root.src, config.tasks.svgsprite.src, '/*.svg'),
         dest: path.join(config.root.dest, config.tasks.svgsprite.dest)
     };
 
-    return gulp.src(settings.src)
+    return gulp.src(paths.src)
         .pipe(imagemin([
             imagemin.svgo({
                 plugins: [{
@@ -24,7 +24,7 @@ const svgSpriteTask = () => {
             })
         ]))
         .pipe(svgstore())
-        .pipe(gulp.dest(settings.dest))
+        .pipe(gulp.dest(paths.dest))
         .on('end', browserSync.reload)
         .pipe(customNotifier({ title: 'SVG sprite compiled' }));
 };

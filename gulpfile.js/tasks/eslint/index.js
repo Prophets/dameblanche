@@ -7,11 +7,11 @@ const eslint = require('gulp-eslint');
 const gulpif = require('gulp-if');
 const path = require('path');
 
-const paths = {
-    src: path.join(config.root.src, config.tasks.eslint.src, '/**/*.{' + config.tasks.eslint.extensions + '}')
-};
-
 const eslintTask = () => {
+    const paths = {
+        src: path.join(config.root.src, config.tasks.eslint.src, '/**/*.{' + config.tasks.eslint.extensions + '}')
+    };
+
     return gulp.src([paths.src])
         .pipe(eslint())
         // eslint.format() outputs the lint results to the console.

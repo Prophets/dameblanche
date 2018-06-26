@@ -6,11 +6,11 @@ const gulp = require('gulp');
 const stylelint = require('gulp-stylelint');
 const path = require('path');
 
-const paths = {
-    src: path.join(config.root.src, config.tasks.stylelint.src, '/**/*.{' + config.tasks.stylelint.extensions + '}')
-};
-
 const stylelintTask = () => {
+    const paths = {
+        src: path.join(config.root.src, config.tasks.stylelint.src, '/**/*.{' + config.tasks.stylelint.extensions + '}')
+    };
+
     return gulp.src([paths.src])
         .pipe(stylelint({
             failAfterError: global.production ? true : false,
