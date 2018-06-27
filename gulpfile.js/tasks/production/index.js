@@ -14,7 +14,7 @@ const productionTask = (cb) => {
         ...tasks.assetTasks,
         ...tasks.codeTasks,
         config.tasks.production.rev ? 'rev' : false,
-        'size-report',
+        config.tasks.production.sizeReport ? 'size-report' : false,
         cb
     );
 };

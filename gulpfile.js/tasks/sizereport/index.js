@@ -1,4 +1,7 @@
 const config = require('../../lib/configLoader');
+
+if (!config.tasks.production.sizeReport) return;
+
 const gulp = require('gulp');
 const sizereport = require('gulp-sizereport');
 

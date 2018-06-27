@@ -1,3 +1,4 @@
 module.exports = {
-    'rev': true
+    'rev': true,
+    'sizeReport': true
 };
