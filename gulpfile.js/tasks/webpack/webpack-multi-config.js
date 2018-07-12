@@ -27,8 +27,7 @@ module.exports = (env) => {
             rules: [{
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: config.tasks.webpack.babel
+                exclude: /node_modules/
             }]
         },
         mode: 'development',
