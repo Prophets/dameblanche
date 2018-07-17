@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -s https://git.prophets.be/open-source/dameblanche/raw/master/bash/bootstrap | bash -s -- "$@"
+curl -s https://raw.githubusercontent.com/Prophets/dameblanche/develop/bash/bootstrap | bash -s -- "$@"

@@ -21,7 +21,7 @@ if [ ! -z "$create" ]
 fi
 
 #clone the git project
-git clone -b "$branch" --depth=1 git@git.prophets.be:open-source/dameblanche.git .
+git clone -b "$branch" --depth=1 git@github.com:Prophets/dameblanche.git .
 # remove dameblanch .git
 rm -rf .git
 
