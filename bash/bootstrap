@@ -1,45 +1,11 @@
+
+
 #!/bin/bash
-branch="master"
-initGit=true
+echo "dameblanche has been moved to https://github.com/Prophets/dameblanche. Do you want to update your dameblanche installer? (yes/no)"
 
-while getopts "b:n" opt
-do
-  case "$opt" in
-    "b") branch="$OPTARG" ;;
-    "n") initGit=false ;;
-  esac
-done
-shift $(($OPTIND - 1))
+read update
 
-create=$1
-
-#create a project directory if create parameter has been set
-if [ ! -z "$create" ]
-    then
-        mkdir "$create"
-        cd "$create"
-fi
-
-#clone the git project
-git clone -b "$branch" --depth=1 git@github.com:Prophets/dameblanche.git .
-# remove dameblanch .git
-rm -rf .git
-
-if $initGit
-    then
-        # initialize new .git
-        git init
-        # add commit message hook
-        cp git/hooks/prepare-commit-msg .git/hooks/prepare-commit-msg
-        # remove git (template hooks) and bash folder
-fi
-
-rm -rf git
-rm -rf bash
-
-if $initGit
-    then
-        # create initial commit
-        git add -A
-        git commit -m 'initial commit'
+if [ "$update" == yes ]
+  then
+    curl -o /usr/local/bin/dameblanche https://raw.githubusercontent.com/Prophets/dameblanche/develop/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
 fi
