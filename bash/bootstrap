@@ -1,11 +1,3 @@
-
-
-#!/bin/bash
-echo "dameblanche has been moved to https://github.com/Prophets/dameblanche. Do you want to update your dameblanche installer? (yes/no)"
-
-read update
-
-if [ "$update" == yes ]
-  then
-    curl -o /usr/local/bin/dameblanche https://raw.githubusercontent.com/Prophets/dameblanche/develop/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
-fi
+#!/bin/sh
+echo "dameblanche has been moved to https://github.com/Prophets/dameblanche. Your local dameblanche installer will be updated"
+curl -o /usr/local/bin/dameblanche https://raw.githubusercontent.com/Prophets/dameblanche/develop/bash/dameblanche &&  chmod 755 /usr/local/bin/dameblanche
