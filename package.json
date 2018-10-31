@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "gulp",
-    "build": "gulp production --build",
+    "build": "gulp production",
     "recipe-react": "./gulpfile.js/recipes/react/setup.sh"
   },
   "devDependencies": {
