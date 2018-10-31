@@ -3,7 +3,7 @@ const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
 const assetTasks = ['images', 'svgsprite', 'static'];
-const codeTasks = ['nunjucks', 'react', 'css', 'webpack'];
+const codeTasks = ['templates', 'react', 'css', 'webpack'];
 const lintTasks = ['eslint', 'stylelint'];
 
 module.exports = (env) => {

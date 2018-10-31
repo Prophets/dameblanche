@@ -16,7 +16,7 @@ module.exports = {
             }
         },
         'css': {},
-        'nunjucks': {},
+        'templates': {},
         'images': {},
         'svgsprite': {},
         'production': {},
