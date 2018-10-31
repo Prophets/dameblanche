@@ -60,5 +60,8 @@
     "not ie <= 10",
     "not ie_mob <= 11",
     "not OperaMobile <= 12"
-  ]
+  ],
+  "engines": {
+    "node" : ">=10"
+  }
 }
