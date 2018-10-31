@@ -1,11 +1,11 @@
 const notify = require('gulp-notify');
 const colors = require('ansi-colors');
 
-module.exports = ({plugin, message, file, fileName} = {}) => {
+module.exports = ({ plugin, message, file, fileName } = {}) => {
     notify.onError({
         title: `${plugin} failed`,
         message: 'error'
-    }).apply(this, arguments);
+    }).apply(this);
 
     const chalk = colors.red;
     let report = '';
