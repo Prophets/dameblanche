@@ -56,17 +56,6 @@ module.exports = (env) => {
 
     webpackConfig.entry = config.tasks.webpack.entries;
 
-    if (config.tasks.webpack.extractSharedJs) {
-        // Factor out common dependencies into a shared.js
-        webpackConfig.plugins.push(
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'shared',
-                filename: filenamePattern,
-                minChunks: 2
-            })
-        );
-    }
-
     if (env === 'production') {
         webpackConfig.mode = 'production';
 
