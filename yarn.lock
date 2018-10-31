@@ -3824,7 +3824,7 @@ gulp-svgstore@^7.0.0:
     plugin-error "^0.1.2"
     vinyl "^2.1.0"
 
-gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8:
+gulp-util@^3.0.0, gulp-util@^3.0.1:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:

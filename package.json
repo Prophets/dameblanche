@@ -37,7 +37,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^8.0.0",
     "gulp-svgstore": "^7.0.0",
-    "gulp-util": "^3.0.8",
     "gulp-watch": "^5.0.0",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-jpegtran": "^5.0.2",
