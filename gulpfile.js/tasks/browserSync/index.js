@@ -16,6 +16,8 @@ const browserSyncTask = () => {
         config.tasks.browserSync.proxy = {
             target: proxyConfig
         };
+
+        delete config.tasks.browserSync.server;
     }
 
     const server = config.tasks.browserSync.proxy || config.tasks.browserSync.server;
