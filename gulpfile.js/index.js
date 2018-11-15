@@ -11,7 +11,8 @@
   when you run `gulp`.
 */
 
-const requireDir = require('require-dir');
+// Load all environment variables from .env into process.env
+require('dotenv').config();
 
 // Require all tasks in gulpfile.js/tasks, including subfolders
-requireDir('./tasks', { recurse: true });
+require('require-dir')('./tasks', { recurse: true });
