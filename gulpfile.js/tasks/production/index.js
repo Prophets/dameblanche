@@ -5,7 +5,6 @@ const getEnabledTasks = require('../../lib/getEnabledTasks');
 
 const productionTask = (cb) => {
     global.production = true;
-    config.root.dest = config.root.productionDest;
 
     const tasks = getEnabledTasks('production');
 

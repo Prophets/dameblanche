@@ -79,7 +79,7 @@ To run any other existing task, simply add the task name after the `yarn run sta
 yarn run build
 ```
 
-This will compile revisioned and compressed files to `./build`. 
+This will compile revisioned and compressed files to `./public`. 
 
 ## Configuration
 Directory and top level settings are convienently exposed in `gulpfile.js/config.json`. Use this file to update paths to match the directory structure of your project, and to adjust task options.
@@ -100,8 +100,6 @@ A `README.md` with details about each asset type are available in their respecti
 - [Images](src/images)
 - [SVG Sprite](src/symbols)
 - [Static Files (favicons, app icons, etc.)](src/static)
-
-This will compile revisioned and compressed files to `./build`. 
 
 ## Helpful tools
 
@@ -140,7 +138,6 @@ Add these to your settings, for a nicer overall Sublime Text experience. Also co
     [
         "node_modules/**",
         "vendor/**",
-        "build/**",
         "*.jpg",
         "*.jpeg",
         "*.png",

@@ -1,8 +1,7 @@
 module.exports = {
     'root': {
         'src': './src',
-        'dest': './public',
-        'productionDest': './build'
+        'dest': './public'
     },
 
     'tasks': {
