@@ -90,6 +90,19 @@ All task configuration objects have `src` and `dest` directories specfied. These
 
 Not all configuration is exposed here. For advanced task configuration, you can always edit the tasks themselves in `gulpfile.js/tasks`.
 
+### Clean configuration
+By default, the entire `dest` directory is deleted before each build. By setting the `clean.patterns` option in config.js, you can specify (using globbing syntax) patterns that should be deleted instead. Use this if you have subdirectories or files within the `dest` directory that should be left alone (media uploaded through a CMS, say).
+
+```javascript
+'clean': {
+    'patterns': [
+        './public/css',
+        './public/images',
+        './public/js',
+        './public/rev-manifest.json'
+    ]
+}
+```
 
 ## Asset Details
 A `README.md` with details about each asset type are available in their respective folders in the `src` directory:

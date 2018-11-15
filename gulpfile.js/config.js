@@ -18,6 +18,7 @@ module.exports = {
         'svgsprite': {},
         'production': {},
         'eslint': {},
-        'stylelint': {}
+        'stylelint': {},
+        'clean': {}
     }
 };
