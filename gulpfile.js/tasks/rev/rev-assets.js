@@ -7,7 +7,7 @@ const config = require('../../lib/configLoader');
 // 1) Add md5 hashes to assets referenced by CSS and JS files
 const revAssetsTask = () => {
     // Ignore files that may reference assets. We'll rev them next.
-    const ignoreThese = '!' + path.join(config.root.dest, '/**/*+(css|js|json|html|ico)');
+    const ignoreThese = '!' + path.join(config.root.dest, '/**/*+(css|js|json|html|ico|php|txt)');
 
     return gulp.src([path.join(config.root.dest, '/**/*'), ignoreThese])
         .pipe(rev())
