@@ -53,30 +53,29 @@ Features | Tools Used
 ## Usage
 Make sure Node is installed. We recommend using [NVM](https://github.com/creationix/nvm) to manage versions. 
 
-This has been tested on Node `7.10.0`, and should work on newer versions as well. [File an issue](https://github.com/Prophets/dameblanche/issues) if it doesn't!
+This has been tested on Node `10.5.0`, and should work on newer versions as well. [File an issue](https://github.com/Prophets/dameblanche/issues) if it doesn't!
 
 ### Install Dependencies
 ```bash
-yarn
+npm install
 ```
 
 ### Run development tasks:
 ```bash
-yarn run start
+npm run start
 ```
-Alias: `yarn start`
 
 This is where the magic happens. The perfect front-end workflow. This runs the default gulp task, which starts compiling, watching, and live updating all our files as we change them. BrowserSync will start a server on port 3000, or do whatever you've configured it to do. You'll be able to see live changes in all connected browsers. Don't forget about the additional BrowserSync tools available on port 3001!
 
 Why run this as an npm script? NPM scripts add ./node_modules/bin to the path when run, using the packages version installed with this project, rather than a globally installed ones. Never `npm install -g` and get into mis-matched version issues again. These scripts are defined in the `scripts` property of `package.json`.
 
-To run any other existing task, simply add the task name after the `yarn run start` command. Example:
+To run any other existing task, simply add the task name after the `npm run start` command. Example:
 
-`yarn run start eslint`
+`npm run start eslint`
 
 ### Build production files:
 ```bash
-yarn run build
+npm run build
 ```
 
 This will compile revisioned and compressed files to `./public`. 
