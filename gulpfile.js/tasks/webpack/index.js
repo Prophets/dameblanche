@@ -2,7 +2,6 @@ const config = require('../../lib/configLoader');
 
 if (!config.tasks.webpack) return;
 
-const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack-multi-config');
 const logger = require('./webpackProductionBuildLogger');
@@ -15,7 +14,5 @@ const webpackProductionTask = (callback) => {
         callback();
     });
 };
-
-gulp.task('webpack:production', webpackProductionTask);
 
 module.exports = webpackProductionTask;

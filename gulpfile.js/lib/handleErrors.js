@@ -1,5 +1,6 @@
 const notify = require('gulp-notify');
 const colors = require('ansi-colors');
+const isProductionBuild = require('./isProductionBuild');
 
 module.exports = ({ plugin, message, file, fileName } = {}) => {
     notify.onError({
@@ -19,7 +20,7 @@ module.exports = ({ plugin, message, file, fileName } = {}) => {
     if (typeof this.emit === 'function') this.emit('end');
 
     // Hard exit build process on error when in production -- needed for CI
-    if (global.production) {
+    if (isProductionBuild()) {
         process.exit(1);
     }
 };

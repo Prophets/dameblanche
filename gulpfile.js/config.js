@@ -16,9 +16,10 @@ module.exports = {
         'templates': {},
         'images': {},
         'svgsprite': {},
-        'production': {},
         'eslint': {},
         'stylelint': {},
-        'clean': {}
+        'clean': {},
+        'rev': {},
+        'sizeReport': {}
     }
 };

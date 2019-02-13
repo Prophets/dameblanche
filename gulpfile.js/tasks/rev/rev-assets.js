@@ -5,7 +5,7 @@ const revNapkin = require('gulp-rev-napkin');
 const config = require('../../lib/configLoader');
 
 // 1) Add md5 hashes to assets referenced by CSS and JS files
-gulp.task('rev-assets', () => {
+const revAssetsTask = () => {
     // Ignore files that may reference assets. We'll rev them next.
     const ignoreThese = '!' + path.join(config.root.dest, '/**/*+(css|js|json|html|ico)');
 
@@ -18,5 +18,7 @@ gulp.task('rev-assets', () => {
         .pipe(rev.manifest(path.join(config.root.dest, 'rev-manifest.json'), {
             merge: true
         }))
-        .pipe(gulp.dest(''));
-});
+        .pipe(gulp.dest('.'));
+};
+
+module.exports = revAssetsTask;

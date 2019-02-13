@@ -6,6 +6,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const gulpif = require('gulp-if');
 const path = require('path');
+const isProductionBuild = require('../../lib/isProductionBuild');
 
 const eslintTask = () => {
     const paths = {
@@ -17,9 +18,7 @@ const eslintTask = () => {
         // eslint.format() outputs the lint results to the console.
         // Alternatively use eslint.formatEach() (see Docs).
         .pipe(eslint.format())
-        .pipe(gulpif(global.production, eslint.failAfterError()));
+        .pipe(gulpif(isProductionBuild(), eslint.failAfterError()));
 };
-
-gulp.task('eslint', eslintTask);
 
 module.exports = eslintTask;

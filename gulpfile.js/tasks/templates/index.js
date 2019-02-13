@@ -12,6 +12,7 @@ const path = require('path');
 const fs = require('fs');
 const handleErrors = require('../../lib/handleErrors');
 const customNotifier = require('../../lib/customNotifier');
+const isProductionBuild = require('../../lib/isProductionBuild');
 
 const templatesTask = () => {
     const exclude = path.normalize('!**/{' + config.tasks.templates.excludeFolders.join(',') + '}/**');
@@ -39,12 +40,10 @@ const templatesTask = () => {
             }
         }))
         .on('error', handleErrors)
-        .pipe(gulpif(global.production, htmlmin(config.tasks.templates.htmlmin)))
+        .pipe(gulpif(isProductionBuild(), htmlmin(config.tasks.templates.htmlmin)))
         .pipe(gulp.dest(paths.dest))
         .on('end', browserSync.reload)
         .pipe(customNotifier({ title: 'Template compiled' }));
 };
-
-gulp.task('templates', templatesTask);
 
 module.exports = templatesTask;

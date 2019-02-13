@@ -1,31 +1,39 @@
+const gulp = require('gulp');
+const flattenDeep = require('lodash/flattenDeep');
 const config = require('../config');
-const compact = require('lodash/compact');
+const isProductionBuild = require('./isProductionBuild');
 
-// Grouped by what can run in parallel
-const assetTasks = ['images', 'svgsprite', 'static'];
-const codeTasks = ['templates', 'react', 'css', 'webpack'];
-const lintTasks = ['eslint', 'stylelint'];
-
-module.exports = (env) => {
-    const matchFilter = (task) => {
-        if (config.tasks[task]) {
-            let t = config.tasks[task].taskName || task;
-            if (t === 'js') {
-                t = env === 'production' ? 'webpack:production' : false;
-            }
-            return t;
-        }
-
-        return undefined;
+module.exports = () => {
+    const enabled = (task) => {
+        return config.tasks[task];
     };
 
-    const exists = (value) => {
-        return !!value;
+    const taskReq = (task) => {
+        return require('../tasks/' + task);
     };
+
+    // Grouped by what can run in parallel
+    const allTasks = [
+        ['clean'],
+        ['eslint', 'stylelint'],
+        ['images', 'svgsprite', 'static'],
+        ['templates', 'react', 'css', isProductionBuild() ? 'webpack' : undefined],
+        isProductionBuild() ? ['rev'] : undefined,
+        isProductionBuild() ? ['sizeReport'] : undefined
+    ];
+
+    const allEnabledTasks = allTasks.filter(Boolean).map((taskGroup) => taskGroup.filter(enabled));
+
+    const enabledTasksAsStrings = flattenDeep(allEnabledTasks);
+
+    const enabledTasksAsOperations = gulp.series(
+        ...allEnabledTasks.map((taskGroup) => {
+            return gulp.parallel(...taskGroup.map(taskReq));
+        })
+    );
 
     return {
-        assetTasks: compact(assetTasks.map(matchFilter).filter(exists)),
-        codeTasks: compact(codeTasks.map(matchFilter).filter(exists)),
-        lintTasks: compact(lintTasks.map(matchFilter).filter(exists))
+        enabledTasksAsStrings,
+        enabledTasksAsOperations
     };
 };

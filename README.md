@@ -53,11 +53,11 @@ Features | Tools Used
 ## Usage
 Make sure Node is installed. We recommend using [NVM](https://github.com/creationix/nvm) to manage versions. 
 
-This has been tested on Node `10.5.0`, and should work on newer versions as well. [File an issue](https://github.com/Prophets/dameblanche/issues) if it doesn't!
+This has been tested on Node `10.5.0` and NPM `6.7.0`, and should work on newer versions as well. [File an issue](https://github.com/Prophets/dameblanche/issues) if it doesn't!
 
 ### Install Dependencies
 ```bash
-npm install
+npm ci
 ```
 
 ### Run development tasks:

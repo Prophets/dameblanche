@@ -4,7 +4,7 @@ const path = require('path');
 const config = require('../../lib/configLoader');
 
 // 5) Update asset references in HTML
-gulp.task('update-html', () => {
+const revUpdateHTMLTask = () => {
     const manifest = gulp.src(path.join(config.root.dest, '/rev-manifest.json'));
     const htmlDest = config.tasks.templates ? config.tasks.templates.dest : './';
 
@@ -13,4 +13,6 @@ gulp.task('update-html', () => {
             manifest: manifest
         }))
         .pipe(gulp.dest(path.join(config.root.dest, htmlDest)));
-});
+};
+
+module.exports = revUpdateHTMLTask;

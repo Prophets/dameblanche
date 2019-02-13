@@ -29,6 +29,4 @@ const svgSpriteTask = () => {
         .pipe(customNotifier({ title: 'SVG sprite compiled' }));
 };
 
-gulp.task('svgsprite', svgSpriteTask);
-
 module.exports = svgSpriteTask;

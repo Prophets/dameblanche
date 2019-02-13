@@ -1,19 +1,13 @@
 const gulp = require('gulp');
-const gulpSequence = require('gulp-sequence');
 const getEnabledTasks = require('../../lib/getEnabledTasks');
+const isProductionBuild = require('../../lib/isProductionBuild');
+const watch = require('../watch');
 
-const defaultTask = (cb) => {
-    const tasks = getEnabledTasks('watch');
+const defaultTasks = [
+    getEnabledTasks().enabledTasksAsOperations,
+    isProductionBuild() ? undefined : watch
+].filter(Boolean);
 
-    gulpSequence(
-        'clean',
-        ...tasks.lintTasks,
-        ...tasks.assetTasks,
-        ...tasks.codeTasks,
-        'watch',
-        cb
-    );
-};
-
-gulp.task('default', defaultTask);
-module.exports = defaultTask;
+module.exports = gulp.series(
+    ...defaultTasks
+);

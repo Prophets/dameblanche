@@ -23,6 +23,4 @@ const imagesTask = () => {
         .pipe(browserSync.stream());
 };
 
-gulp.task('images', imagesTask);
-
 module.exports = imagesTask;
