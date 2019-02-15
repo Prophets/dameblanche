@@ -12,6 +12,7 @@ const cssnano = require('gulp-cssnano');
 const path = require('path');
 const handleErrors = require('../../lib/handleErrors');
 const customNotifier = require('../../lib/customNotifier');
+const isProductionBuild = require('../../lib/isProductionBuild');
 
 const cssTask = () => {
     const paths = {
@@ -20,19 +21,17 @@ const cssTask = () => {
     };
 
     return gulp.src(paths.src)
-        .pipe(gulpif(!global.production, sourcemaps.init()))
+        .pipe(gulpif(!isProductionBuild(), sourcemaps.init()))
         .pipe(sass(config.tasks.css.sass))
         .on('error', handleErrors)
         .pipe(autoprefixer())
-        .pipe(gulpif(global.production, cssnano({
+        .pipe(gulpif(isProductionBuild(), cssnano({
             autoprefixer: false
         })))
-        .pipe(gulpif(!global.production, sourcemaps.write()))
+        .pipe(gulpif(!isProductionBuild(), sourcemaps.write()))
         .pipe(gulp.dest(paths.dest))
         .pipe(customNotifier({ title: 'CSS compiled' }))
         .pipe(browserSync.stream());
 };
-
-gulp.task('css', cssTask);
 
 module.exports = cssTask;

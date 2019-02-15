@@ -22,6 +22,4 @@ const staticTask = () => {
         .pipe(customNotifier({ title: 'Static files copied' }));
 };
 
-gulp.task('static', staticTask);
-
 module.exports = staticTask;

@@ -1,5 +1,4 @@
 module.exports = {
-    'taskName': 'templates',
     'src': 'templates',
     'dest': './',
     'dataFile': 'data/global.json',

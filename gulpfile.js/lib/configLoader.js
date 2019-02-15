@@ -1,9 +1,9 @@
 const fs = require('fs');
-const Path = require('path');
+const path = require('path');
 const defaultsDeep = require('lodash/defaultsDeep');
 
 const configLoader = () => {
-    const currentPath = Path.resolve(__dirname, '../tasks');
+    const currentPath = path.resolve(__dirname, '../tasks');
     const config = {};
     fs.readdirSync(currentPath).forEach((item) => {
         const configPath = currentPath + '/' + item + '/config';

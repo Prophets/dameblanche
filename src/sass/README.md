@@ -23,16 +23,14 @@ Our Sass is organized in a number of folders and files. A breakdown of what's wh
 
 - `/layout` : This folder contains all layout related Sass. A layout only has positioning/visibility styling and no cosmetic styling.
 
-- `/objects` : This folder contains all object related Sass. An object is (mostly) a small building block in your application that may be used in any number of unrelated contexts.
+- `/components` : This folder contains all component related Sass. 
 
-- `/components` : This folder contains all component related Sass. A component is (mostly) a slightly larger building block in your application, containing objects and maybe even other components. But it's a concrete, implementation specific piece of UI.
-
-- `/trumps` : This folder contains a number of files that have utility classes in them. Most of these utility classes have `!important` in them. Use these classes sparingly!
+- `/utilities` : This folder contains a number of files that have utility classes in them. Most of these utility classes have `!important` in them. Use these classes sparingly!
 
 
 ## Naming conventions
 
-We are trying to use a namespaced variation of BEM methodology, called [BEMIT](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
+We use [BEM methodology](https://en.bem.info/methodology/).
 
 
 ## Tasks and Files

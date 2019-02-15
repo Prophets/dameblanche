@@ -1,13 +1,10 @@
-if (global.production) return;
-
 const browserSync = require('browser-sync');
-const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackMultiConfig = require('../webpack/webpack-multi-config');
 const config = require('../../lib/configLoader');
 const pathToUrl = require('../../lib/pathToUrl');
 
-const browserSyncTask = () => {
+const browserSyncTask = (done) => {
     const webpackConfig = webpackMultiConfig('development');
     const compiler = webpack(webpackConfig);
     const proxyConfig = config.tasks.browserSync.proxy || null;
@@ -31,8 +28,8 @@ const browserSyncTask = () => {
     ];
 
     browserSync.init(config.tasks.browserSync);
-};
 
-gulp.task('browserSync', browserSyncTask);
+    done();
+};
 
 module.exports = browserSyncTask;

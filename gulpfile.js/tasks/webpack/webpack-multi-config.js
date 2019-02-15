@@ -11,7 +11,7 @@ module.exports = (env) => {
     const jsSrc = path.resolve(config.root.src, config.tasks.webpack.src);
     const jsDest = path.resolve(config.root.dest, config.tasks.webpack.dest);
     const publicPath = pathToUrl(config.tasks.webpack.dest, '/');
-    const rev = config.tasks.production.rev && env === 'production';
+    const rev = (env === 'production');
     const filenamePattern = rev ? '[name]-[chunkhash].js' : '[name].js';
     const webpackConfig = {
         context: jsSrc,

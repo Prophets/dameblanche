@@ -5,6 +5,7 @@ if (!config.tasks.stylelint) return;
 const gulp = require('gulp');
 const stylelint = require('gulp-stylelint');
 const path = require('path');
+const isProductionBuild = require('../../lib/isProductionBuild');
 
 const stylelintTask = () => {
     const paths = {
@@ -13,14 +14,12 @@ const stylelintTask = () => {
 
     return gulp.src([paths.src])
         .pipe(stylelint({
-            failAfterError: global.production ? true : false,
+            failAfterError: isProductionBuild() ? true : false,
             reporters: [{
                 formatter: 'string',
                 console: true
             }]
         }));
 };
-
-gulp.task('stylelint', stylelintTask);
 
 module.exports = stylelintTask;
