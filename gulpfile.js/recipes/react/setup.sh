@@ -2,9 +2,10 @@
 
 # install js dependencies for react recipe
 npm install react react-dom
-npm install babel-plugin-transform-react-jsx
+npm install --save-dev @babel/plugin-transform-react-jsx
 
-# replace current config file with react recipe config file.
+# replace some files
+cp -fi gulpfile.js/recipes/react/.babelrc .babelrc
 cp -fi gulpfile.js/recipes/react/config.js gulpfile.js/config.js
 cp -rfi gulpfile.js/recipes/react/src/* src/
 rm -rfi src/js/modules

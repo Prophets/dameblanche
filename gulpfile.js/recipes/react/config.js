@@ -8,12 +8,6 @@ module.exports = {
         'browserSync': {},
         'static': {},
         'webpack': {
-            'babel': {
-                'presets': [['es2015', { 'modules': false }]],
-                'plugins': [
-                    'transform-react-jsx'
-                ]
-            },
             'entries': {
                 'app': ['./app.js']
             }
