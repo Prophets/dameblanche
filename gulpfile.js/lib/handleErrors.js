@@ -2,11 +2,12 @@ const notify = require('gulp-notify');
 const colors = require('ansi-colors');
 const isProductionBuild = require('./isProductionBuild');
 
-module.exports = ({ plugin, message, file, fileName } = {}) => {
+module.exports = function({ plugin, message, file, fileName } = {}) {
     notify.onError({
         title: `${plugin} failed`,
-        message: 'error'
-    }).apply(this);
+        message: 'ERROR',
+        icon: `${__dirname}/../extra/xallthey.png`
+    }).apply(this, arguments);
 
     const chalk = colors.red;
     let report = '';
@@ -17,7 +18,9 @@ module.exports = ({ plugin, message, file, fileName } = {}) => {
     console.error(report);
 
     // Keep gulp from hanging on this task
-    if (typeof this.emit === 'function') this.emit('end');
+    if (this.end && typeof this.end === 'function') {
+        this.end();
+    }
 
     // Hard exit build process on error when in production -- needed for CI
     if (isProductionBuild()) {
